@@ -4,7 +4,7 @@ module Database where
 data Equipment = Equipment
   { name :: String
   , typ :: EType
-  , perk :: Perk
+  , perks :: [Perk]
   , slots :: [Slot]
   }
   deriving (Eq,Show)
@@ -68,6 +68,9 @@ data Perk
   | Lucent
   | StunningVigour
 
+  -- TODO
+  | Insulated
+
   deriving (Eq,Show)
 
 
@@ -94,13 +97,13 @@ data Loadout = Loadout
 loadoutSlots :: Loadout -> ([Perk], [Slot])
 loadoutSlots (Loadout {..}) = (allPerks,allSlots)
   where
-    allPerks =
-      [ perk weapon
-      , perk helm
-      , perk bodyArmor
-      , perk gauntlet
-      , perk boots
-      , perk lantern
+    allPerks = concat
+      [ perks weapon
+      , perks helm
+      , perks bodyArmor
+      , perks gauntlet
+      , perks boots
+      , perks lantern
       ]
     allSlots = concat
       [ slots weapon
@@ -109,3 +112,32 @@ loadoutSlots (Loadout {..}) = (allPerks,allSlots)
       , slots gauntlet
       , slots lantern
       ]
+
+weapons =
+  [ Equipment "Fall of the Shrike" Weapon [Conditioning] [Power, Mobility]
+  , Equipment "Ember Maul"         Weapon [EvasiveFury]  [Power, Mobility]
+  ]
+
+helms =
+  [ Equipment "Boreal Epiphany" Helm [Conditioning] [Utility]
+  , Equipment "Fiery Helm" Helm [EvasiveFury] [Mobility]
+  ]
+
+bodyArmors =
+  [ Equipment "Gnasher Cloak" BodyArmor [Tough] [Defensive]
+  , Equipment "Fiery Breastplate" BodyArmor [EvasiveFury] [Mobility]
+  ]
+
+gauntlets =
+  [ Equipment "Shocking Grasp" Gauntlet [AethericAttunement] [Utility]
+  , Equipment "Fiery Gauntlets" Gauntlet [Fireprof] [Technique]
+  ]
+
+bootss =
+  [ Equipment "Shocking Stride" Boots [Insulated] [Defensive]
+  , Equipment "Fiery Greaves" Boots [Evasion] [Defensive]
+  ]
+
+lanterns =
+  [ Equipment "Embermane's Rapture" Lantern [] [Utility]
+  ]
