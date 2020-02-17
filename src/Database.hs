@@ -1,12 +1,12 @@
-{-# LANGUAGE RecordWildCards #-}
+{-# LANGUAGE RecordWildCards,NamedFieldPuns #-}
 module Database where
 
 data Equipment = Equipment
-  { name :: String
-  , typ :: EType
-  , element :: Element
-  , perks :: [Perk]
-  , slots :: [Slot]
+  { _name :: String
+  , _type :: EType
+  , _element :: Element
+  , _perks :: [Perk]
+  , _slots :: [Slot]
   }
   deriving (Eq,Show)
 
@@ -98,34 +98,89 @@ data Slot
 
 
 data Loadout = Loadout
-  { weapon :: Equipment
-  , helm :: Equipment
-  , bodyArmor :: Equipment
-  , gauntlet :: Equipment
-  , boots :: Equipment
-  , lantern :: Equipment
+  { _weapon :: Equipment
+  , _helm :: Equipment
+  , _bodyArmor :: Equipment
+  , _gauntlet :: Equipment
+  , _boots :: Equipment
+  , _lantern :: Equipment
   }
   deriving (Eq,Show)
 
 
-loadoutSlots :: Loadout -> ([Perk], [Slot])
-loadoutSlots (Loadout {..}) = (allPerks,allSlots)
+data Resistances = Resistances
+  { _blaze :: Int
+  , _frost :: Int
+  , _shock :: Int
+  , _terra :: Int
+  , _radiant :: Int
+  , _umbral :: Int
+  }
+  deriving (Eq,Show)
+
+data Slots = Slots
+  { _power :: Int
+  , _mobility :: Int
+  , _defensive :: Int
+  , _utility :: Int
+  , _technique :: Int
+  , _prismatic :: Int
+  }
+  deriving (Eq,Show)
+
+noSlots = Slots 0 0 0 0 0 0
+
+neutralResistances = Resistances 0 0 0 0 0 0
+
+resistance :: Element -> Resistances -> Resistances
+resistance Neutral r = r
+resistance Blaze r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze+1, _frost = frost-1 }
+resistance Frost r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze-1, _frost = frost+1 }
+resistance Shock r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock+1, _terra = terra-1 }
+resistance Terra r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock-1, _terra = terra+1 }
+resistance Radiant r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant+1, _umbral = umbral-1 }
+resistance Umbral r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant-1, _umbral = umbral+1 }
+
+equipmentResistances :: Equipment -> Resistances -> Resistances
+equipmentResistances Equipment{_element} = resistance _element
+
+loadoutResistances :: Loadout -> Resistances
+loadoutResistances Loadout{_helm,_bodyArmor,_gauntlet,_boots} =
+  helmRes $ bodyRes $ gauntletRes $ bootsRes neutralResistances
+  where
+  helmRes = equipmentResistances _helm
+  bodyRes = equipmentResistances _bodyArmor
+  gauntletRes = equipmentResistances _gauntlet
+  bootsRes = equipmentResistances _boots
+
+slots :: Slot -> Slots -> Slots
+slots Power      s@Slots{_power}     = s { _power=_power+1 }
+slots Mobility   s@Slots{_mobility}  = s { _mobility=_mobility+1 }
+slots Defensive  s@Slots{_defensive} = s { _defensive=_defensive+1 }
+slots Utility    s@Slots{_utility}   = s { _utility=_utility+1 }
+slots Technique  s@Slots{_technique} = s { _technique=_technique+1 }
+slots Prismatic  s@Slots{_prismatic} = s { _prismatic=_prismatic+1 }
+
+equipmentSlots :: Equipment -> Slots -> Slots
+equipmentSlots Equipment{_slots} s = (foldl (.) id (map slots _slots)) s
+
+loadoutSlots :: Loadout -> Slots
+loadoutSlots (Loadout {..}) = allSlots
   where
     allPerks = concat
-      [ perks weapon
-      , perks helm
-      , perks bodyArmor
-      , perks gauntlet
-      , perks boots
-      , perks lantern
+      [ _perks _weapon
+      , _perks _helm
+      , _perks _bodyArmor
+      , _perks _gauntlet
+      , _perks _boots
+      , _perks _lantern
       ]
-    allSlots = concat
-      [ slots weapon
-      , slots helm
-      , slots bodyArmor
-      , slots gauntlet
-      , slots lantern
-      ]
+    allSlots = weaponSlots $ helmSlots $ bodySlots $ gauntletSlots $ lanternSlots noSlots
+    weaponSlots = equipmentSlots _weapon
+    helmSlots = equipmentSlots _helm
+    bodySlots = equipmentSlots _bodyArmor
+    gauntletSlots = equipmentSlots _gauntlet
+    lanternSlots = equipmentSlots _lantern
 
 weapons = hammers
 
