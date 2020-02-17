@@ -27,13 +27,11 @@ allLoadouts =
 
 main :: IO ()
 main = do
-  print $ take 3 $ sortOn (\(_,rests,_) -> - (_blaze rests))
+  mapM_ print $ take 3 $ sortOn (\(_,rests,_) -> - (_shock rests))
     [ x
     | x@(l, rests, slots) <- allLoadouts
     , _mobility slots >= 1
-    , _power slots >= 2
+    , _power slots >= 1
     , _technique slots >= 2
-    -- , _defensive slots >= 1
+    , _defensive slots >= 1
     ]
-  print $ loadoutSlots testLoadout
-  print $ loadoutResistances testLoadout
