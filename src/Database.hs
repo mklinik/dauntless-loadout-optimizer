@@ -8,7 +8,10 @@ data Equipment = Equipment
   , _perks :: [Perk]
   , _slots :: [Slot]
   }
-  deriving (Eq,Show)
+  deriving (Eq)
+
+instance Show Equipment where
+  show (Equipment{_name}) = _name
 
 data Element
   = Neutral
@@ -116,7 +119,16 @@ data Resistances = Resistances
   , _radiant :: Int
   , _umbral :: Int
   }
-  deriving (Eq,Show)
+  deriving (Eq)
+
+instance Show Resistances where
+  show Resistances{..} =
+    "blz:" ++ show _blaze ++
+    " fro:" ++ show _frost ++
+    " sho:" ++ show _shock ++
+    " ter:" ++ show _terra ++
+    " rad:" ++ show _radiant ++
+    " umb:" ++ show _umbral
 
 data Slots = Slots
   { _power :: Int
@@ -126,7 +138,16 @@ data Slots = Slots
   , _technique :: Int
   , _prismatic :: Int
   }
-  deriving (Eq,Show)
+  deriving (Eq)
+
+instance Show Slots where
+  show Slots{..} =
+    "pow:" ++ show _power ++
+    " mob:" ++ show _mobility ++
+    " def:" ++ show _defensive ++
+    " utl:" ++ show _utility ++
+    " tec:" ++ show _technique ++
+    " pri:" ++ show _prismatic
 
 noSlots = Slots 0 0 0 0 0 0
 
