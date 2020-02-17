@@ -4,7 +4,6 @@ import Data.List
 
 import Database
 
-
 testLoadout = Loadout
   { _weapon = weapons !! 0
   , _helm = helms !! 0
@@ -15,7 +14,7 @@ testLoadout = Loadout
   }
 
 allLoadouts =
-  [ (l, loadoutResistances l, loadoutSlots l)
+  [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l)
   | weapon <- weapons
   , helm <- helms
   , bodyArmor <- bodyArmors
@@ -27,11 +26,13 @@ allLoadouts =
 
 main :: IO ()
 main = do
-  mapM_ print $ take 3 $ sortOn (\(_,rests,_) -> - (_shock rests))
+  mapM_ print $ take 3 $
+    sortOn (\(_,_,advantage,_) -> (_blaze advantage)) $
+    sortOn (\(_,rests,_,_) -> - (_blaze rests)) $
     [ x
-    | x@(l, rests, slots) <- allLoadouts
+    | x@(_, _, _, slots) <- allLoadouts
     , _mobility slots >= 1
-    , _power slots >= 1
-    , _technique slots >= 2
+    , _power slots >= 2
+    , _technique slots >= 1
     , _defensive slots >= 1
     ]

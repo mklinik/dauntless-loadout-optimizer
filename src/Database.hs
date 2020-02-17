@@ -162,17 +162,29 @@ resistance Terra r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock-1
 resistance Radiant r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant+1, _umbral = umbral-1 }
 resistance Umbral r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant-1, _umbral = umbral+1 }
 
-equipmentResistances :: Equipment -> Resistances -> Resistances
-equipmentResistances Equipment{_element} = resistance _element
+advantage :: Element -> Resistances -> Resistances
+advantage Neutral r = r
+advantage Blaze r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze-1, _frost = frost+1 }
+advantage Frost r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze+1, _frost = frost-1 }
+advantage Shock r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock-1, _terra = terra+1 }
+advantage Terra r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock+1, _terra = terra-1 }
+advantage Radiant r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant-1, _umbral = umbral+1 }
+advantage Umbral r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant+1, _umbral = umbral-1 }
+
+equipmentProperty :: (Element -> Resistances -> Resistances) -> Equipment -> Resistances -> Resistances
+equipmentProperty prop Equipment{_element} = prop _element
 
 loadoutResistances :: Loadout -> Resistances
-loadoutResistances Loadout{_helm,_bodyArmor,_gauntlet,_boots} =
+loadoutResistances Loadout{..} =
   helmRes $ bodyRes $ gauntletRes $ bootsRes neutralResistances
   where
-  helmRes = equipmentResistances _helm
-  bodyRes = equipmentResistances _bodyArmor
-  gauntletRes = equipmentResistances _gauntlet
-  bootsRes = equipmentResistances _boots
+  helmRes = equipmentProperty resistance _helm
+  bodyRes = equipmentProperty resistance _bodyArmor
+  gauntletRes = equipmentProperty resistance _gauntlet
+  bootsRes = equipmentProperty resistance _boots
+
+loadoutAdvantage :: Loadout -> Resistances
+loadoutAdvantage Loadout{_weapon} = (equipmentProperty advantage _weapon) neutralResistances
 
 slots :: Slot -> Slots -> Slots
 slots Power      s@Slots{_power}     = s { _power=_power+1 }
