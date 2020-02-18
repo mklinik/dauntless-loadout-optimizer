@@ -11,7 +11,7 @@ data Equipment = Equipment
   deriving (Eq)
 
 instance Show Equipment where
-  show (Equipment{_name}) = _name
+  show (Equipment{..}) = _name
 
 data Element
   = Neutral
@@ -90,6 +90,7 @@ data Perk
   deriving (Eq,Show)
 
 
+
 data Slot
   = Power
   | Mobility
@@ -97,7 +98,16 @@ data Slot
   | Utility
   | Technique
   | Prismatic
-  deriving (Eq,Show)
+  deriving (Eq)
+
+instance Show Slot where
+  show Power     = "pow"
+  show Mobility  = "mob"
+  show Defensive = "def"
+  show Utility   = "utl"
+  show Technique = "tec"
+  show Prismatic = "pri"
+
 
 
 data Loadout = Loadout
@@ -108,7 +118,17 @@ data Loadout = Loadout
   , _boots :: Equipment
   , _lantern :: Equipment
   }
-  deriving (Eq,Show)
+  deriving (Eq)
+
+
+instance Show Loadout where
+  show Loadout {..} =
+    show _weapon ++ "\n" ++
+    show _helm ++ "\n" ++
+    show _bodyArmor ++ "\n" ++
+    show _gauntlet ++ "\n" ++
+    show _boots ++ "\n" ++
+    show _lantern
 
 
 data Resistances = Resistances

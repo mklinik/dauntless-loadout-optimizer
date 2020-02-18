@@ -26,7 +26,12 @@ allLoadouts =
 
 main :: IO ()
 main = do
-  mapM_ print $ take 3 $
+  mapM_ (\(l,rests,_,slots) ->
+      print l >>
+      print rests >>
+      print slots >>
+      putStrLn "") $
+    take 3 $
     sortOn (\(_,_,advantage,_) -> (_blaze advantage)) $
     sortOn (\(_,rests,_,_) -> - (_blaze rests)) $
     [ x
