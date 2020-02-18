@@ -59,6 +59,7 @@ main = do
       , num resist Frost >= 3
       ]
 
+  print $ length allLoadouts
   print $ length loadoutRequirements
   mapM_ (\(l,rests,_,slots,perks) -> do
       print l
