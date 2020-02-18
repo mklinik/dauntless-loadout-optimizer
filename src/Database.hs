@@ -157,6 +157,9 @@ dec a (Histogram m) = Histogram $ Map.alter (maybe (Just (-1)) (Just . (\n -> n-
 num :: Ord a => Histogram a -> a -> Int
 num (Histogram m) a = Map.findWithDefault 0 a m
 
+absSum :: Ord a => Histogram a -> Int
+absSum (Histogram m) = sum $ map abs $ Map.elems m
+
 
 type Slots = Histogram Slot
 

@@ -34,12 +34,19 @@ main = do
       print slots >>
       putStrLn "") $
     take 3 $
-    sortOn (\(_,_,advantage,_) -> - (num advantage Blaze)) $
-    sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
+
+    -- optimize for blaze
+    -- sortOn (\(_,_,advantage,_) ->   (num advantage Blaze)) $
+    -- sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
+
+    -- optimize for neutral
+    sortOn (\(_,_,advantage,_) -> - (absSum advantage)) $
+    sortOn (\(_,rests,_,_) ->       (absSum rests))     $
+
     [ x
     | x@(_, _, _, slots) <- allLoadouts
     , num slots Mobility >= 1
-    , num slots Power >= 2
-    , num slots Technique >= 1
+    , num slots Power >= 1
+    , num slots Technique >= 2
     , num slots Defensive >= 1
     ]
