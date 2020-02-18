@@ -1,6 +1,10 @@
 {-# LANGUAGE RecordWildCards,NamedFieldPuns #-}
 module Database where
 
+import qualified Data.Map as Map
+import Data.Map (Map)
+import Data.List
+
 data Equipment = Equipment
   { _name :: String
   , _type :: EType
@@ -21,7 +25,16 @@ data Element
   | Terra
   | Radiant
   | Umbral
-  deriving (Eq,Show)
+  deriving (Eq,Ord)
+
+instance Show Element where
+  show Neutral = "ntr"
+  show Blaze = "blz"
+  show Frost = "fro"
+  show Shock = "sho"
+  show Terra = "ter"
+  show Radiant = "rad"
+  show Umbral = "umb"
 
 data EType
   = Helm
@@ -98,7 +111,7 @@ data Slot
   | Utility
   | Technique
   | Prismatic
-  deriving (Eq)
+  deriving (Eq,Ord)
 
 instance Show Slot where
   show Power     = "pow"
@@ -130,66 +143,40 @@ instance Show Loadout where
     show _boots ++ "\n" ++
     show _lantern
 
+newtype Histogram a = Histogram (Map a Int)
 
-data Resistances = Resistances
-  { _blaze :: Int
-  , _frost :: Int
-  , _shock :: Int
-  , _terra :: Int
-  , _radiant :: Int
-  , _umbral :: Int
-  }
-  deriving (Eq)
+instance Show a => Show (Histogram a) where
+  show (Histogram m) = concat $ intersperse " " [ show k ++ ":" ++ show v | (k,v) <- Map.toList m]
 
-instance Show Resistances where
-  show Resistances{..} =
-    "blz:" ++ show _blaze ++
-    " fro:" ++ show _frost ++
-    " sho:" ++ show _shock ++
-    " ter:" ++ show _terra ++
-    " rad:" ++ show _radiant ++
-    " umb:" ++ show _umbral
+inc :: Ord a => a -> Histogram a -> Histogram a
+inc a (Histogram m) = Histogram $ Map.alter (maybe (Just 1) (Just . (\n -> n+1))) a m
 
-data Slots = Slots
-  { _power :: Int
-  , _mobility :: Int
-  , _defensive :: Int
-  , _utility :: Int
-  , _technique :: Int
-  , _prismatic :: Int
-  }
-  deriving (Eq)
+dec :: Ord a => a -> Histogram a -> Histogram a
+dec a (Histogram m) = Histogram $ Map.alter (maybe (Just (-1)) (Just . (\n -> n-1))) a m
 
-instance Show Slots where
-  show Slots{..} =
-    "pow:" ++ show _power ++
-    " mob:" ++ show _mobility ++
-    " def:" ++ show _defensive ++
-    " utl:" ++ show _utility ++
-    " tec:" ++ show _technique ++
-    " pri:" ++ show _prismatic
+num :: Ord a => Histogram a -> a -> Int
+num (Histogram m) a = Map.findWithDefault 0 a m
 
-noSlots = Slots 0 0 0 0 0 0
 
-neutralResistances = Resistances 0 0 0 0 0 0
+type Slots = Histogram Slot
+
+noSlots :: Histogram Slot
+noSlots = Histogram Map.empty
+
+type Resistances = Histogram Element
+
+neutralResistances :: Histogram Element
+neutralResistances = Histogram Map.empty
+
 
 resistance :: Element -> Resistances -> Resistances
-resistance Neutral r = r
-resistance Blaze r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze+1, _frost = frost-1 }
-resistance Frost r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze-1, _frost = frost+1 }
-resistance Shock r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock+1, _terra = terra-1 }
-resistance Terra r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock-1, _terra = terra+1 }
-resistance Radiant r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant+1, _umbral = umbral-1 }
-resistance Umbral r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant-1, _umbral = umbral+1 }
-
-advantage :: Element -> Resistances -> Resistances
-advantage Neutral r = r
-advantage Blaze r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze-1, _frost = frost+1 }
-advantage Frost r@Resistances{_blaze=blaze,_frost=frost} = r { _blaze = blaze+1, _frost = frost-1 }
-advantage Shock r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock-1, _terra = terra+1 }
-advantage Terra r@Resistances{_shock=shock,_terra=terra} = r { _shock = shock+1, _terra = terra-1 }
-advantage Radiant r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant-1, _umbral = umbral+1 }
-advantage Umbral r@Resistances{_radiant=radiant,_umbral=umbral} = r { _radiant = radiant+1, _umbral = umbral-1 }
+resistance Neutral = id
+resistance Blaze = inc Blaze . dec Frost
+resistance Frost = inc Frost . dec Blaze
+resistance Shock = inc Shock . dec Terra
+resistance Terra = inc Terra . dec Shock
+resistance Radiant = inc Radiant . dec Umbral
+resistance Umbral = inc Umbral . dec Radiant
 
 equipmentProperty :: (Element -> Resistances -> Resistances) -> Equipment -> Resistances -> Resistances
 equipmentProperty prop Equipment{_element} = prop _element
@@ -204,18 +191,10 @@ loadoutResistances Loadout{..} =
   bootsRes = equipmentProperty resistance _boots
 
 loadoutAdvantage :: Loadout -> Resistances
-loadoutAdvantage Loadout{_weapon} = (equipmentProperty advantage _weapon) neutralResistances
-
-slots :: Slot -> Slots -> Slots
-slots Power      s@Slots{_power}     = s { _power=_power+1 }
-slots Mobility   s@Slots{_mobility}  = s { _mobility=_mobility+1 }
-slots Defensive  s@Slots{_defensive} = s { _defensive=_defensive+1 }
-slots Utility    s@Slots{_utility}   = s { _utility=_utility+1 }
-slots Technique  s@Slots{_technique} = s { _technique=_technique+1 }
-slots Prismatic  s@Slots{_prismatic} = s { _prismatic=_prismatic+1 }
+loadoutAdvantage Loadout{_weapon} = (equipmentProperty resistance _weapon) neutralResistances
 
 equipmentSlots :: Equipment -> Slots -> Slots
-equipmentSlots Equipment{_slots} s = (foldl (.) id (map slots _slots)) s
+equipmentSlots Equipment{_slots} s = foldl (flip id) s (map inc _slots)
 
 loadoutSlots :: Loadout -> Slots
 loadoutSlots (Loadout {..}) = allSlots

@@ -1,6 +1,8 @@
 module Main where
 
 import Data.List
+import qualified Data.Map as Map
+import Data.Map (Map,(!))
 
 import Database
 
@@ -32,12 +34,12 @@ main = do
       print slots >>
       putStrLn "") $
     take 3 $
-    sortOn (\(_,_,advantage,_) -> (_blaze advantage)) $
-    sortOn (\(_,rests,_,_) -> - (_blaze rests)) $
+    sortOn (\(_,_,advantage,_) -> - (num advantage Blaze)) $
+    sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
     [ x
     | x@(_, _, _, slots) <- allLoadouts
-    , _mobility slots >= 1
-    , _power slots >= 2
-    , _technique slots >= 1
-    , _defensive slots >= 1
+    , num slots Mobility >= 1
+    , num slots Power >= 2
+    , num slots Technique >= 1
+    , num slots Defensive >= 1
     ]
