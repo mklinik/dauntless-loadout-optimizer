@@ -210,11 +210,12 @@ loadoutSlots (Loadout {..}) = allSlots
       , _perks _boots
       , _perks _lantern
       ]
-    allSlots = weaponSlots $ helmSlots $ bodySlots $ gauntletSlots $ lanternSlots noSlots
+    allSlots = weaponSlots $ helmSlots $ bodySlots $ gauntletSlots $ bootsSlots $ lanternSlots noSlots
     weaponSlots = equipmentSlots _weapon
     helmSlots = equipmentSlots _helm
     bodySlots = equipmentSlots _bodyArmor
     gauntletSlots = equipmentSlots _gauntlet
+    bootsSlots = equipmentSlots _boots
     lanternSlots = equipmentSlots _lantern
 
 weapons = hammers
