@@ -4,6 +4,8 @@ import Data.List
 import qualified Data.Map as Map
 import Data.Map (Map,(!))
 
+import Histogram
+import Types
 import Database
 
 testLoadout = Loadout
