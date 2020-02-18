@@ -18,7 +18,7 @@ testLoadout = Loadout
   }
 
 allLoadouts =
-  [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l)
+  [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
   | weapon <- hammers
   , helm <- helms
   , bodyArmor <- bodyArmors
@@ -30,30 +30,41 @@ allLoadouts =
 
 main :: IO ()
 main = do
-  mapM_ (\(l,rests,_,slots) -> do
+
+  let
+    loadoutRequirements =
+      -- optimize for blaze
+      -- sortOn (\(_,_,advantage,_) ->   (num advantage Blaze)) $
+      -- sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
+
+      -- optimize for frost
+      sortOn (\(_,_,advantage,_,_) ->   (num advantage Frost)) $
+      sortOn (\(_,rests,_,_,_) ->     - (num rests Frost))     $
+
+      -- optimize for neutral
+      -- sortOn (\(_,_,advantage,_) -> - (absSum advantage)) $
+      -- sortOn (\(_,rests,_,_) ->       (absSum rests))     $
+
+      -- sortOn (\(_,_,_,_,perks) -> - (num perks KnockoutKing)) $
+      sortOn (\(_,_,_,_,perks) -> - (num perks Warmth)) $
+
+      [ x
+      | x@(_, resist, _, slots, perks) <- allLoadouts
+      , num slots Mobility >= 1
+      , num slots Power >= 2
+      , num slots Technique >= 2
+      , num slots Defensive >= 1
+      -- , num perks Warmth >= 1
+      , num perks KnockoutKing >= 1
+      , num resist Frost >= 3
+      ]
+
+  print $ length loadoutRequirements
+  mapM_ (\(l,rests,_,slots,perks) -> do
       print l
       print rests
       print slots
-      print $ loadoutPerks l
+      print perks
       putStrLn "") $
     take 3 $
-
-    -- optimize for blaze
-    -- sortOn (\(_,_,advantage,_) ->   (num advantage Blaze)) $
-    -- sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
-
-    -- optimize for frost
-    sortOn (\(_,_,advantage,_) ->   (num advantage Frost)) $
-    sortOn (\(_,rests,_,_) ->     - (num rests Frost))     $
-
-    -- optimize for neutral
-    -- sortOn (\(_,_,advantage,_) -> - (absSum advantage)) $
-    -- sortOn (\(_,rests,_,_) ->       (absSum rests))     $
-
-    [ x
-    | x@(_, _, _, slots) <- allLoadouts
-    , num slots Mobility >= 2
-    , num slots Power >= 2
-    , num slots Technique >= 1
-    , num slots Defensive >= 1
-    ]
+    loadoutRequirements
