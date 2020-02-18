@@ -17,7 +17,7 @@ testLoadout = Loadout
 
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l)
-  | weapon <- weapons
+  | weapon <- hammers
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -39,14 +39,18 @@ main = do
     -- sortOn (\(_,_,advantage,_) ->   (num advantage Blaze)) $
     -- sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
 
+    -- optimize for frost
+    sortOn (\(_,_,advantage,_) ->   (num advantage Frost)) $
+    sortOn (\(_,rests,_,_) ->     - (num rests Frost))     $
+
     -- optimize for neutral
-    sortOn (\(_,_,advantage,_) -> - (absSum advantage)) $
-    sortOn (\(_,rests,_,_) ->       (absSum rests))     $
+    -- sortOn (\(_,_,advantage,_) -> - (absSum advantage)) $
+    -- sortOn (\(_,rests,_,_) ->       (absSum rests))     $
 
     [ x
     | x@(_, _, _, slots) <- allLoadouts
-    , num slots Mobility >= 1
-    , num slots Power >= 1
-    , num slots Technique >= 2
+    , num slots Mobility >= 2
+    , num slots Power >= 2
+    , num slots Technique >= 1
     , num slots Defensive >= 1
     ]
