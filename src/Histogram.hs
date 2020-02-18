@@ -7,6 +7,12 @@ import Data.List
 
 newtype Histogram a = Histogram (Map a Int)
 
+instance Ord a => Semigroup (Histogram a) where
+  (Histogram m1) <> (Histogram m2) = Histogram $ Map.unionWith (+) m1 m2
+
+instance Ord a => Monoid (Histogram a) where
+  mempty = Histogram Map.empty
+
 instance Show a => Show (Histogram a) where
   show (Histogram m) = concat $ intersperse " " [ show k ++ ":" ++ show v | (k,v) <- Map.toList m]
 

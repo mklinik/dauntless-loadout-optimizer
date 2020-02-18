@@ -101,7 +101,7 @@ data Perk
   | Nimble
   | Bond
 
-  deriving (Eq,Show)
+  deriving (Eq,Show,Ord)
 
 
 
@@ -146,14 +146,8 @@ instance Show Loadout where
 
 
 type Slots = Histogram Slot
-
-noSlots :: Histogram Slot
-noSlots = Histogram Map.empty
-
 type Resistances = Histogram Element
-
-neutralResistances :: Histogram Element
-neutralResistances = Histogram Map.empty
+type Perks = Histogram Perk
 
 
 resistance :: Element -> Resistances -> Resistances
@@ -165,20 +159,20 @@ resistance Terra = inc Terra . dec Shock
 resistance Radiant = inc Radiant . dec Umbral
 resistance Umbral = inc Umbral . dec Radiant
 
-equipmentProperty :: (Element -> Resistances -> Resistances) -> Equipment -> Resistances -> Resistances
-equipmentProperty prop Equipment{_element} = prop _element
+equipmentResistance :: Equipment -> Resistances -> Resistances
+equipmentResistance Equipment{_element} = resistance _element
 
 loadoutResistances :: Loadout -> Resistances
 loadoutResistances Loadout{..} =
-  helmRes $ bodyRes $ gauntletRes $ bootsRes neutralResistances
+  helmRes $ bodyRes $ gauntletRes $ bootsRes mempty
   where
-  helmRes = equipmentProperty resistance _helm
-  bodyRes = equipmentProperty resistance _bodyArmor
-  gauntletRes = equipmentProperty resistance _gauntlet
-  bootsRes = equipmentProperty resistance _boots
+  helmRes = equipmentResistance _helm
+  bodyRes = equipmentResistance _bodyArmor
+  gauntletRes = equipmentResistance _gauntlet
+  bootsRes = equipmentResistance _boots
 
 loadoutAdvantage :: Loadout -> Resistances
-loadoutAdvantage Loadout{_weapon} = (equipmentProperty resistance _weapon) neutralResistances
+loadoutAdvantage Loadout{_weapon} = (equipmentResistance _weapon) mempty
 
 equipmentSlots :: Equipment -> Slots -> Slots
 equipmentSlots Equipment{_slots} s = foldl (flip id) s (map inc _slots)
@@ -186,7 +180,18 @@ equipmentSlots Equipment{_slots} s = foldl (flip id) s (map inc _slots)
 loadoutSlots :: Loadout -> Slots
 loadoutSlots (Loadout {..}) = allSlots
   where
-    allPerks = concat
+    allSlots = weaponSlots $ helmSlots $ bodySlots $ gauntletSlots $ bootsSlots $ lanternSlots mempty
+    weaponSlots = equipmentSlots _weapon
+    helmSlots = equipmentSlots _helm
+    bodySlots = equipmentSlots _bodyArmor
+    gauntletSlots = equipmentSlots _gauntlet
+    bootsSlots = equipmentSlots _boots
+    lanternSlots = equipmentSlots _lantern
+
+loadoutPerks :: Loadout -> Perks
+loadoutPerks (Loadout {..}) = allPerks
+  where
+    allPerks = foldl (flip id) mempty $ map inc $ concat
       [ _perks _weapon
       , _perks _helm
       , _perks _bodyArmor
@@ -194,10 +199,3 @@ loadoutSlots (Loadout {..}) = allSlots
       , _perks _boots
       , _perks _lantern
       ]
-    allSlots = weaponSlots $ helmSlots $ bodySlots $ gauntletSlots $ bootsSlots $ lanternSlots noSlots
-    weaponSlots = equipmentSlots _weapon
-    helmSlots = equipmentSlots _helm
-    bodySlots = equipmentSlots _bodyArmor
-    gauntletSlots = equipmentSlots _gauntlet
-    bootsSlots = equipmentSlots _boots
-    lanternSlots = equipmentSlots _lantern
