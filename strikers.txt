@@ -1,0 +1,20 @@
+"Raging Fists"  Neutral  Ragehunter  Technique Utility 
+"Fists of the Shrike"  Neutral  Conditioning  Technique Mobility 
+"Quillshot's Shredders"  Neutral  Acidic  Technique Defense 
+"Skarn's Smashers"  Terra  Knockout King  Technique Defense 
+"Charred Hands"  Blaze  Aetherhunter  Technique Defense 
+"Winter Wolves"  Frost  Nimble  Technique Mobility 
+"Ember Fists"  Blaze  Evasive Fury  Technique Mobility 
+"Thundering Bolts"  Shock  Aetheric Attunement  Technique Power 
+"Nayzaga's Shockers"  Shock  Savagery  Technique Utility 
+"Pangar's Punishers"  Frost  Knockout King  Technique Defense 
+"Inferno's Flames"  Blaze  Overpower  Power Power 
+"Storm Breakers"  Shock  Aetheric Attunement  Technique Mobility 
+"Kharabak's Pincers"  Terra  Bladestorm  Technique Mobility 
+"Hands of Dawn"  Radiant  Cunning  Technique Power 
+"Hands of Night"  Umbral  Cunning  Technique Utility 
+"Sovereign's Sceptres"  Terra  Sharpened  Power Utility 
+"Stalker's Scorn"  Umbral  Wild Frenzy  Technique Utility 
+"Valomyr's Visions"  Radiant  Aetherhunter  Power Utility 
+"Brawlers of Boreus"  Frost  Conditioning  Power Defence 
+"Mistral Currents"  Shock  Bond  Prismatic Prismatic 
