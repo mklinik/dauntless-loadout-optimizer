@@ -30,10 +30,11 @@ allLoadouts =
 
 main :: IO ()
 main = do
-  mapM_ (\(l,rests,_,slots) ->
-      print l >>
-      print rests >>
-      print slots >>
+  mapM_ (\(l,rests,_,slots) -> do
+      print l
+      print rests
+      print slots
+      print $ loadoutPerks l
       putStrLn "") $
     take 3 $
 

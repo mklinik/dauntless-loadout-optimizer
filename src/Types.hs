@@ -48,7 +48,7 @@ data EType
 
 data Perk
   -- Defensive
-  = Fireprof
+  = Fireproof
   | AssassinsVigour
   | NineLives
   | Tough
@@ -100,6 +100,12 @@ data Perk
   | Insulated
   | Nimble
   | Bond
+  | WeightedStrikes
+  | ShellshockResist
+  | Guardian
+  | Rage
+  | Iceborne
+  | Grace
 
   deriving (Eq,Show,Ord)
 
