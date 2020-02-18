@@ -58,6 +58,30 @@ strikers =
   ]
 
 
+pikes =
+  [ Equipment "Raging Cruelty" Weapon Neutral [Ragehunter] [Technique, Utility]
+  , Equipment "Scream of the Shrike" Weapon Neutral [Conditioning] [Technique, Mobility]
+  , Equipment "Quillshot's Javelin" Weapon Neutral [Acidic] [Technique, Defensive]
+  , Equipment "Skarn's Spite" Weapon Terra [WeightedStrikes] [Technique, Defensive]
+  , Equipment "Charred Spear" Weapon Blaze [Aetherhunter] [Technique, Defensive]
+  , Equipment "Winter Vortex" Weapon Frost [Nimble] [Technique, Mobility]
+  , Equipment "Ember Pike" Weapon Blaze [EvasiveFury] [Technique, Mobility]
+  , Equipment "Thundering Spear" Weapon Shock [AethericAttunement] [Technique, Power]
+  , Equipment "Nayzaga's Fang" Weapon Shock [Barbed] [Technique, Utility]
+  , Equipment "Pangar's Tooth" Weapon Frost [WeightedStrikes] [Technique, Defensive]
+  , Equipment "Inferno's Arrow" Weapon Blaze [Overpower] [Power, Power]
+  , Equipment "Storm Pike" Weapon Shock [Energized] [Technique, Mobility]
+  , Equipment "Kharabak's Sting" Weapon Terra [Bladestorm] [Technique, Mobility]
+  , Equipment "Spire of Dawn" Weapon Radiant [Cunning] [Technique, Power]
+  , Equipment "Gyre of Night" Weapon Umbral [Cunning] [Technique, Utility]
+  , Equipment "Sovereign's Sorrow" Weapon Terra [Sharpened] [Power, Utility]
+  , Equipment "Stalker's Spike" Weapon Umbral [WildFrenzy] [Technique, Utility]
+  , Equipment "Valomyr's Hope" Weapon Radiant [Aetherhunter] [Power, Utility]
+  , Equipment "Revolution of Boreus" Weapon Frost [Conditioning] [Power, Defensive]
+  , Equipment "The Conductor" Weapon Shock [Bond] [Prismatic, Prismatic]
+  ]
+
+
 helms =
   [ Equipment "Lightning Helm" Helm Shock [Energized] [Technique]
   , Equipment "Skraevwing Helmet" Helm Frost [FleetFooted] [Mobility]

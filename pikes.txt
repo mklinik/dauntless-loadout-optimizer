@@ -1,0 +1,20 @@
+"Raging Cruelty" None 	Ragehunter 	Technique Utility 
+"Scream of the Shrike" None 	Conditioning 	Technique Mobility 
+"Quillshot's Javelin" None 	Acidic 	Technique Defence 
+"Skarn's Spite" Terra 	Weighted Strikes 	Technique Defence 
+"Charred Spear" Blaze 	Aetherhunter 	Technique Defence 
+"Winter Vortex" Frost 	Nimble 	Technique Mobility 
+"Ember Pike" Blaze 	Evasive Fury 	Technique Mobility 
+"Thundering Spear" Shock 	Aetheric Attunement 	Technique Power 
+"Nayzaga's Fang" Shock 	Barbed 	Technique Utility 
+"Pangar's Tooth" Frost 	Weighted Strikes 	Technique Defence None
+"Inferno's Arrow" Blaze 	Overpower 	Power Power 
+"Storm Pike" Shock 	Energized 	Technique Mobility 
+"Kharabak's Sting" Terra 	Bladestorm 	Technique Mobility 
+"Spire of Dawn" Radiant 	Cunning 	Technique Power 
+"Gyre of Night" Umbral 	Cunning 	Technique Utility 
+"Sovereign's Sorrow" Terra 	Sharpened 	Power Utility 
+"Stalker's Spike" Umbral 	Wild Frenzy 	Technique Utility 
+"Valomyr's Hope" Radiant 	Aetherhunter 	Power Utility 
+"Revolution of Boreus" Frost 	Conditioning 	Power Defence 
+"The Conductor" Shock 	Bond 	Prismatic Prismatic 
