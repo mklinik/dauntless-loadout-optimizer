@@ -30,7 +30,6 @@ allLoadouts =
 
 main :: IO ()
 main = do
-
   let
     loadoutRequirements =
       -- optimize for blaze
@@ -38,29 +37,26 @@ main = do
       -- sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
 
       -- optimize for frost
-      sortOn (\(_,_,advantage,_,_) ->   (num advantage Frost)) $
-      sortOn (\(_,rests,_,_,_) ->     - (num rests Frost))     $
+      -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Frost)) $
+      -- sortOn (\(_,rests,_,_,_) ->     - (num rests Frost))     $
+
+      -- optimize for frost
+      sortOn (\(_,_,advantage,_,_) ->   (num advantage Shock)) $
+      sortOn (\(_,rests,_,_,_) ->     - (num rests Shock))     $
+
+      sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
+      -- sortOn (\(_,_,_,_,perks) -> - (num perks KnockoutKing)) $
 
       -- optimize for neutral
-      -- sortOn (\(_,_,advantage,_) -> - (absSum advantage)) $
-      -- sortOn (\(_,rests,_,_) ->       (absSum rests))     $
+      -- sortOn (\(_,_,advantage,_,_) -> - (absSum advantage)) $
+      -- sortOn (\(_,rests,_,_,_) ->       (absSum rests))     $
 
-      -- sortOn (\(_,_,_,_,perks) -> - (num perks KnockoutKing)) $
-      sortOn (\(_,_,_,_,perks) -> - (num perks Warmth)) $
+      -- sortOn (\(_,_,_,_,perks) -> - (num perks Warmth)) $
 
-      [ x
-      | x@(_, resist, _, slots, perks) <- allLoadouts
-      , num slots Mobility >= 1
-      , num slots Power >= 2
-      , num slots Technique >= 2
-      , num slots Defensive >= 1
-      -- , num perks Warmth >= 1
-      , num perks KnockoutKing >= 1
-      , num resist Frost >= 3
-      ]
+      stagger
 
-  print $ length allLoadouts
-  print $ length loadoutRequirements
+  -- print $ length allLoadouts
+  -- print $ length loadoutRequirements
   mapM_ (\(l,rests,_,slots,perks) -> do
       print l
       print rests
@@ -69,3 +65,18 @@ main = do
       putStrLn "") $
     take 3 $
     loadoutRequirements
+
+
+stagger =
+  [ x
+  | x@(_, resist, _, slots, perks) <- allLoadouts
+  , num slots Mobility >= 1 -- Conditioning
+  , num slots Power >= 1
+  , num slots Technique >= 3 -- WeightedStrikes
+  , num slots Defensive >= 1
+  -- , num perks Warmth >= 1
+  -- , num perks KnockoutKing >= 1
+  -- , num perks WeightedStrikes >= 1
+  -- , num perks Conditioning >= 1
+  -- , num resist Frost >= 3
+  ]

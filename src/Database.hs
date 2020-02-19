@@ -82,6 +82,30 @@ pikes =
   ]
 
 
+chainBlades =
+  [ Equipment "Raging Teeth" Weapon Neutral [Ragehunter] [Technique, Utility]
+  , Equipment "Flight of the Shrike" Weapon Neutral [Conditioning] [Technique, Mobility]
+  , Equipment "Quillshot's Bonehooks" Weapon Neutral [Acidic] [Technique, Defensive]
+  , Equipment "Skarn's Malice" Weapon Terra [WeightedStrikes] [Technique, Defensive]
+  , Equipment "Charred Blades" Weapon Blaze [Aetherhunter] [Technique, Defensive]
+  , Equipment "Winter Winds" Weapon Frost [Nimble] [Technique, Mobility]
+  , Equipment "Ember Blades" Weapon Blaze [EvasiveFury] [Technique, Mobility]
+  , Equipment "Thundering Cutters" Weapon Shock [AethericAttunement] [Technique, Power]
+  , Equipment "Nayzaga's Reach" Weapon Shock [Barbed] [Utility, Mobility]
+  , Equipment "Pangar's Claws" Weapon Frost [WeightedStrikes] [Technique, Defensive]
+  , Equipment "Inferno's Fangs" Weapon Blaze [Overpower] [Power, Power]
+  , Equipment "Storm Blades" Weapon Shock [Energized] [Technique, Mobility]
+  , Equipment "Kharabak's Wings" Weapon Terra [Bladestorm] [Technique, Mobility]
+  -- , Equipment "Fangs of Dawn" Weapon Radiant [Cunning] [Technique, Power]
+  -- , Equipment "Eyes of Night" Weapon Umbral [Cunning] [Technique, Utility]
+  , Equipment "Sovereign's Lash" Weapon Terra [Sharpened] [Power, Utility]
+  -- , Equipment "Stalker's Trap" Weapon Umbral [WildFrenzy] [Technique, Utility]
+  -- , Equipment "Valomyr's Revenge" Weapon Radiant [Aetherhunter] [Power, Utility]
+  , Equipment "Destiny of Boreus" Weapon Frost [Conditioning] [Power, Defensive]
+  , Equipment "Electric Cruelties" Weapon Shock [Bond] [Prismatic, Prismatic]
+  ]
+
+
 helms =
   [ Equipment "Lightning Helm" Helm Shock [Energized] [Technique]
   , Equipment "Skraevwing Helmet" Helm Frost [FleetFooted] [Mobility]
@@ -102,7 +126,7 @@ helms =
   , Equipment "Sight of Stone" Helm Terra [Tough] [Defensive]
   -- , Equipment "Light's Crown" Helm Radiant [Conduit] [Technique]
   -- , Equipment "Dark Watch" Helm Umbral [Rage] [Power]
-  , Equipment "Malkarion's Sight" Helm Shock [Grace] [Mobility]
+  -- , Equipment "Malkarion's Sight" Helm Shock [Grace] [Mobility]
   ]
 
 bodyArmors =
@@ -125,7 +149,7 @@ bodyArmors =
   , Equipment "Heart of Stone" BodyArmor Terra [Guardian] [Defensive]
   -- , Equipment "Light's Virtue" BodyArmor Radiant [Conduit] [Utility]
   -- , Equipment "Dark Marrow" BodyArmor Umbral [Rage] [Power]
-  , Equipment "Malkarion's Soul" BodyArmor Shock [Aetherhunter] [Technique]
+  -- , Equipment "Malkarion's Soul" BodyArmor Shock [Aetherhunter] [Technique]
   ]
 
 gauntlets =
@@ -148,7 +172,7 @@ gauntlets =
   , Equipment "Might of Stone" Gauntlet Terra [Fortress] [Defensive]
   -- , Equipment "Light's Refuge" Gauntlet Radiant [Conduit] [Technique]
   -- , Equipment "Dark Embrace" Gauntlet Umbral [Medic] [Utility]
-  , Equipment "Malkarion's Grasp" Gauntlet Shock [Predator] [Technique]
+  -- , Equipment "Malkarion's Grasp" Gauntlet Shock [Predator] [Technique]
   ]
 
 bootss =
@@ -171,7 +195,7 @@ bootss =
   , Equipment "Pillars of Stone" Boots Terra [Guardian] [Defensive]
   -- , Equipment "Light's Walk" Boots Radiant [Agility] [Mobility]
   -- , Equipment "Dark Path" Boots Umbral [NineLives] [Utility]
-  , Equipment "Malkarion's March" Boots Shock [Aetherhunter] [Technique]
+  -- , Equipment "Malkarion's March" Boots Shock [Aetherhunter] [Technique]
   ]
 
 lanterns =
