@@ -1,0 +1,177 @@
+Cores
+=====
+
+Always Good
+
+- 010 def Fortress     : small shield
+- 122 def Ass. Vigour  : heal when break part
+- 020 def Iceborne     : increase defense when at low health, life steal
+- 014 def Tough        : increase max health and healing
+- 021 pow Sharpened    : percent Part damage
+- 001 pow Knockout King: percent Stagger damage
+- 020 mob Conditioning : stamina regen
+- 126 mob Agility      : decrease stamina cost of dodging
+- 002 mob Endurance    : increase max stamina
+- 021 mob Evasion      : increase dodge window
+- 100 tec Cunning      : increase crit chance
+- 100 tec WeightedStrks: flat Stagger damage
+- 004 tec Bladestorm   : flat Part damage
+- 003 tec Predator     : increase damage after avoiding damage (?)
+- 110 tec Wild Frenzy  : increase Attack speed when at low health (?)
+- 021 tec Acidic       : increase Wound damage at the cost of Part damage
+- 012 tec Barbed       : flat Wound damage
+- 022 tec Savagery     : increase damage against wounded parts
+- 112 utl Aeth Frenzy  : flat Lantern charge
+- 034 utl Aeth Attune  : percent Lantern charge
+- 121 utl Conduit      : hold ability increases attack speed (?)
+- 011 utl Aeth.Borne   : increase benefit of using aether vents
+- 013 utl Medic        : improved revives (?)
+
+
+
+Hammer
+======
+
+I don't have good Knockout King cells, so for now go for Parts damage,
+Defense, Stamina
+
+Neutral
+-------
+
+- 1 def Fortress
+- 1 def Ass. Vigour -- can be changed on the fly for elemental defense
+- 1 mob Conditioning
+- 1 mob Evasion -- better for hammer; Agility better for Blades
+- 2 pow Sharpened
+
+Fall of the Shrike
+Skraevwing Helmet
+Shocking Heart
+Might of Stone
+Hellplate Greaves
+Any Lantern
+blz:0 fro:0 sho:0 ter:0
+pow:2 mob:2 def:2 utl:1
+Fortress:2 Conditioning:1 FleetFooted:1 Medic:1
+
+- can have +4 Medic!
+- 2 Fortress in perks, can swap Fortress cell for something else later
+
+
+Blaze
+
+
+Frost
+
+
+Shock
+
+
+Terra
+
+
+Radiant
+
+
+Umbral
+
+
+
+Chain Blades
+============
+
+- I have +3 Weighted Strikes; could go for stagger build instead of part build
+- It seems that Chain Blades have more options for tec builds, less options
+  for pow builds.
+
+Neutral Part damage build
+
+- 1 def Fortress
+- 1 def Ass. Vigour -- can be changed on the fly for elemental defense
+- 1 mob Conditioning
+- 1 mob Agility     -- Evasion better for hammer; Agility better for Blades
+- 2 tec Any good ones -- once I have upgraded Bladestorm, use them!
+
+- Ass. Vigour synergizes with Bladestorm, which I don't have yet
+
+Flight of the Shrike
+Lightning Helm
+Heart of Stone
+Might of Stone
+Lightning Boots
+Any Lantern
+sho:0 ter:0
+mob:2 def:2 utl:1 tec:2
+Fortress:1 Conditioning:1 AethericFrenzy:1 Energized:1 Guardian:1
+
+
+Blaze
+
+
+Frost
+
+
+Shock
+
+
+Terra
+
+
+Radiant
+
+
+Umbral
+
+
+
+
+Ideas
+=====
+
+- Fortress and Guardian have good synergy
+
+Low-Health build.
+
+- def Iceborne for healing, heals up to 50%
+- Some cells that give increased attack power when under 50%
+- Wild Frenzy: increase attack speed when at low health (how much?)
+
+Wound build
+
+- Acidic: increase Wound damage at the cost of Part damage
+  - could be useful for Hammer
+- Barbed: flat Wound damage
+  - useful for Chain Blades, not Hammer
+- Savagery: increase damage against wounded parts
+
+
+Notes
+=====
+
+- def Fortress
+  +6 = 100 shield after 10 secs
+  +3 =  40 shield after 10 secs
+  +2 =  20 shield after 10 secs
+  
+
+- def Iceborne
+  +6 = +30% damage decrease, +8% lifesteal
+  +4 = +20% damage decrease, +4% lifesteal
+  +3 = +15% damage decrease
+
+- tec Predator
+  +6 = +35% damage after 15 secs
+  +3 = +14% damage after 15 secs
+
+- tec Wild Frenzy
+  +6 = +20% attack speed
+  +3 = +12.5% attack speed
+
+- utl Conduit
+  +6 = +15% attack speed for 10 seconds
+  +3 =  +8% attack speed for 10 seconds
+
+- utl Medic
+  +6 = heal revived allies +40%, +66% revive speed, gain 300 shield for 20 seconds
+  +4 = heal revived allies +20%, +66% revive speed
+  +3 = heal revived allies +20%
