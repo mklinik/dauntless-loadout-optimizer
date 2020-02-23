@@ -35,13 +35,13 @@ Hammer
 I don't have good Knockout King cells, so for now go for Parts damage,
 Defense, Stamina
 
-Neutral
--------
+Neutral Parts damage build
+--------------------------
 
 - 1 def Fortress
 - 1 def Ass. Vigour -- can be changed on the fly for elemental defense
 - 1 mob Conditioning
-- 1 mob Evasion -- better for hammer; Agility better for Blades
+- 1 mob Evasion -- Evasion better for hammer; Agility better for Blades
 - 2 pow Sharpened
 
 Fall of the Shrike
@@ -56,25 +56,6 @@ Fortress:2 Conditioning:1 FleetFooted:1 Medic:1
 
 - can have +4 Medic!
 - 2 Fortress in perks, can swap Fortress cell for something else later
-
-
-Blaze
-
-
-Frost
-
-
-Shock
-
-
-Terra
-
-
-Radiant
-
-
-Umbral
-
 
 
 Chain Blades
@@ -105,26 +86,6 @@ mob:2 def:2 utl:1 tec:2
 Fortress:1 Conditioning:1 AethericFrenzy:1 Energized:1 Guardian:1
 
 
-Blaze
-
-
-Frost
-
-
-Shock
-
-
-Terra
-
-
-Radiant
-
-
-Umbral
-
-
-
-
 Ideas
 =====
 
@@ -133,8 +94,8 @@ Ideas
 Low-Health build.
 
 - def Iceborne for healing, heals up to 50%
-- Some cells that give increased attack power when under 50%
-- Wild Frenzy: increase attack speed when at low health (how much?)
+- Some cells that give increased attack power when under 50%, which ones?
+- tec Wild Frenzy: increase attack speed when at low health (how much?)
 
 Wound build
 
@@ -152,7 +113,6 @@ Notes
   +6 = 100 shield after 10 secs
   +3 =  40 shield after 10 secs
   +2 =  20 shield after 10 secs
-  
 
 - def Iceborne
   +6 = +30% damage decrease, +8% lifesteal
