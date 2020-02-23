@@ -199,5 +199,5 @@ bootss =
   ]
 
 lanterns =
-  [ Equipment "Embermane's Rapture" Lantern Neutral [] [Utility]
+  [ Equipment "Any Lantern" Lantern Neutral [] [Utility]
   ]
