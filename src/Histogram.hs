@@ -13,8 +13,8 @@ instance Ord a => Semigroup (Histogram a) where
 instance Ord a => Monoid (Histogram a) where
   mempty = Histogram Map.empty
 
-instance Show a => Show (Histogram a) where
-  show (Histogram m) = concat $ intersperse " " [ show k ++ ":" ++ show v | (k,v) <- Map.toList m]
+instance (Show a, Ord a) => Show (Histogram a) where
+  show (Histogram m) = concat $ intersperse " " [ show k ++ ":" ++ show v | (k,v) <- sort $ Map.toList m]
 
 inc :: Ord a => a -> Histogram a -> Histogram a
 inc a (Histogram m) = Histogram $ Map.alter (maybe (Just 1) (Just . (\n -> n+1))) a m
