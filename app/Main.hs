@@ -19,7 +19,7 @@ testLoadout = Loadout
 
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
-  | weapon <- hammers
+  | weapon <- chainBlades
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -32,51 +32,45 @@ main :: IO ()
 main = do
   let
     loadoutRequirements =
-      -- optimize for blaze
-      -- sortOn (\(_,_,advantage,_) ->   (num advantage Blaze)) $
-      -- sortOn (\(_,rests,_,_) ->     - (num rests Blaze))     $
-
       -- optimize for frost
-      -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Frost)) $
-      -- sortOn (\(_,rests,_,_,_) ->     - (num rests Frost))     $
+      -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Shock)) $
+      -- sortOn (\(_,rests,_,_,_) ->     - (num rests Shock))     $
 
-      -- optimize for frost
-      sortOn (\(_,_,advantage,_,_) ->   (num advantage Shock)) $
-      sortOn (\(_,rests,_,_,_) ->     - (num rests Shock))     $
-
+      -- sortOn (\(_,_,_,_,perks) -> - (num perks Fortress)) $
       sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
-      -- sortOn (\(_,_,_,_,perks) -> - (num perks KnockoutKing)) $
 
       -- optimize for neutral
-      -- sortOn (\(_,_,advantage,_,_) -> - (absSum advantage)) $
-      -- sortOn (\(_,rests,_,_,_) ->       (absSum rests))     $
+      sortOn (\(_,rests,_,_,_) ->     (absSum rests))     $
+      sortOn (\(_,_,advantage,_,_) -> (absSum advantage)) $
 
-      -- sortOn (\(_,_,_,_,perks) -> - (num perks Warmth)) $
-
-      stagger
+      test
 
   -- print $ length allLoadouts
-  -- print $ length loadoutRequirements
-  mapM_ (\(l,rests,_,slots,perks) -> do
-      print l
+  print $ length loadoutRequirements
+  mapM_ (\(loadout,rests,advantage,slots,perks) -> do
+      print loadout
       print rests
       print slots
       print perks
       putStrLn "") $
-    take 3 $
+    -- take 4 $
     loadoutRequirements
 
-
-stagger =
+test =
   [ x
-  | x@(_, resist, _, slots, perks) <- allLoadouts
-  , num slots Mobility >= 1 -- Conditioning
-  , num slots Power >= 1
-  , num slots Technique >= 3 -- WeightedStrikes
-  , num slots Defensive >= 1
+  | x@(loadout, resist, advantage, slots, perks) <- allLoadouts
+  , num slots Mobility >= 2
+  , num slots Technique >= 2
+  , num slots Defensive >= 2
+  -- , absSum advantage == 0
+  -- , num slots Defensive >= 1
   -- , num perks Warmth >= 1
   -- , num perks KnockoutKing >= 1
   -- , num perks WeightedStrikes >= 1
-  -- , num perks Conditioning >= 1
+  , num perks Conditioning >= 1
+  , num perks Fortress >= 1
+  , num perks Guardian >= 1
+  -- , _name (_weapon loadout) /= "Destiny of Boreus"
+  -- , _name (_weapon loadout) /= "Skarn's Vengeance"
   -- , num resist Frost >= 3
   ]
