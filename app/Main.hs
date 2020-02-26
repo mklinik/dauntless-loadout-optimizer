@@ -8,15 +8,6 @@ import Histogram
 import Types
 import Database
 
-testLoadout = Loadout
-  { _weapon = weapons !! 0
-  , _helm = helms !! 0
-  , _bodyArmor = bodyArmors !! 0
-  , _gauntlet = gauntlets !! 0
-  , _boots = bootss !! 0
-  , _lantern = lanterns !! 0
-  }
-
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
   | weapon <- chainBlades
