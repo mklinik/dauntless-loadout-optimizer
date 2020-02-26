@@ -6,7 +6,7 @@ Always Good
 - 010 def Fortress     : small shield
 - 122 def Ass. Vigour  : heal when break part
 - 020 def Iceborne     : increase defense when at low health, life steal
-- 014 def Tough        : increase max health and healing
+- 015 def Tough        : increase max health and healing
 - 021 pow Sharpened    : percent Part damage
 - 001 pow Knockout King: percent Stagger damage
 - 020 mob Conditioning : stamina regen
@@ -19,13 +19,13 @@ Always Good
 - 003 tec Predator     : increase damage after avoiding damage (?)
 - 110 tec Wild Frenzy  : increase Attack speed when at low health (?)
 - 021 tec Acidic       : increase Wound damage at the cost of Part damage
-- 012 tec Barbed       : flat Wound damage
+- 020 tec Barbed       : flat Wound damage
 - 022 tec Savagery     : increase damage against wounded parts
 - 112 utl Aeth Frenzy  : flat Lantern charge
 - 034 utl Aeth Attune  : percent Lantern charge
 - 121 utl Conduit      : hold ability increases attack speed (?)
 - 011 utl Aeth.Borne   : increase benefit of using aether vents
-- 013 utl Medic        : improved revives (?)
+- 021 utl Medic        : improved revives (?)
 
 
 
@@ -58,10 +58,27 @@ Fortress:2 Conditioning:1 FleetFooted:1 Medic:1
 - 2 Fortress in perks, can swap Fortress cell for something else later
 
 
+Umbral survival build
+---------------------
+
+- For the Stalker, conditioning is maybe not even that important
+- Try to go Medic +4 for the revive speed
+- Predator could be interesting
+- Tough and Iceborne +4
+
+- 1 def Fortress
+- 1 def Tough
+- 1 def Iceborne
+- 1 mob Evasion
+- 1 mob Conditioning
+- 1 tec Medic
+
+
 Chain Blades
 ============
 
-- I have +3 Weighted Strikes; could go for stagger build instead of part build
+- I have +3 tec Weighted Strikes; could go for stagger build instead of part
+  build
 - It seems that Chain Blades have more options for tec builds, less options
   for pow builds.
 
