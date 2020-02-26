@@ -10,7 +10,9 @@ import Database
 
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
-  | weapon <- chainBlades
+  | weapon <-
+      [h | h@(Equipment name _ _ _ _) <- hammers, name == "Valomyr's Burden"]
+      -- hammers
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -28,13 +30,30 @@ main = do
       -- sortOn (\(_,rests,_,_,_) ->     - (num rests Shock))     $
 
       -- sortOn (\(_,_,_,_,perks) -> - (num perks Fortress)) $
-      sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
+      -- sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
 
       -- optimize for neutral
-      sortOn (\(_,rests,_,_,_) ->     (absSum rests))     $
-      sortOn (\(_,_,advantage,_,_) -> (absSum advantage)) $
+      -- sortOn (\(_,rests,_,_,_) ->     (absSum rests))     $
+      -- sortOn (\(_,_,advantage,_,_) -> (absSum advantage)) $
 
-      test
+      [ x
+      | x@(loadout, resist, advantage, slots, perks) <- allLoadouts
+      , num slots Mobility >= 2
+      -- , num slots Technique >= 2
+      , num slots Defensive >= 2
+      -- , absSum advantage == 0
+      -- , num slots Defensive >= 1
+      -- , num perks Warmth >= 1
+      -- , num perks KnockoutKing >= 1
+      -- , num perks WeightedStrikes >= 1
+      -- , num perks Conditioning >= 1
+      , num perks Fortress >= 1
+      , num perks Tough >= 1
+      -- , num perks Guardian >= 1
+      -- , _name (_weapon loadout) /= "Destiny of Boreus"
+      -- , _name (_weapon loadout) /= "Skarn's Vengeance"
+      -- , num resist Frost >= 3
+      ]
 
   -- print $ length allLoadouts
   print $ length loadoutRequirements
@@ -46,22 +65,3 @@ main = do
       putStrLn "") $
     -- take 4 $
     loadoutRequirements
-
-test =
-  [ x
-  | x@(loadout, resist, advantage, slots, perks) <- allLoadouts
-  , num slots Mobility >= 2
-  , num slots Technique >= 2
-  , num slots Defensive >= 2
-  -- , absSum advantage == 0
-  -- , num slots Defensive >= 1
-  -- , num perks Warmth >= 1
-  -- , num perks KnockoutKing >= 1
-  -- , num perks WeightedStrikes >= 1
-  , num perks Conditioning >= 1
-  , num perks Fortress >= 1
-  , num perks Guardian >= 1
-  -- , _name (_weapon loadout) /= "Destiny of Boreus"
-  -- , _name (_weapon loadout) /= "Skarn's Vengeance"
-  -- , num resist Frost >= 3
-  ]

@@ -8,31 +8,31 @@ Always Good
 - 020 def Iceborne     : increase defense when at low health, life steal
 - 015 def Tough        : increase max health and healing
 - 021 pow Sharpened    : percent Part damage
-- 001 pow Knockout King: percent Stagger damage
+- 001 pow KnockoutKing : percent Stagger damage
 - 020 mob Conditioning : stamina regen
 - 126 mob Agility      : decrease stamina cost of dodging
 - 002 mob Endurance    : increase max stamina
 - 021 mob Evasion      : increase dodge window
 - 100 tec Cunning      : increase crit chance
-- 100 tec WeightedStrks: flat Stagger damage
+- 100 tec WeightedStrikes: flat Stagger damage
 - 004 tec Bladestorm   : flat Part damage
-- 003 tec Predator     : increase damage after avoiding damage (?)
-- 110 tec Wild Frenzy  : increase Attack speed when at low health (?)
+- 003 tec Predator     : increase damage after avoiding damage
+- 110 tec WildFrenzy   : increase Attack speed when at low health
 - 021 tec Acidic       : increase Wound damage at the cost of Part damage
 - 020 tec Barbed       : flat Wound damage
 - 022 tec Savagery     : increase damage against wounded parts
-- 112 utl Aeth Frenzy  : flat Lantern charge
+- 112 utl AethericFrenzy: flat Lantern charge
 - 034 utl Aeth Attune  : percent Lantern charge
-- 121 utl Conduit      : hold ability increases attack speed (?)
+- 121 utl Conduit      : hold ability increases attack speed
 - 011 utl Aeth.Borne   : increase benefit of using aether vents
-- 021 utl Medic        : improved revives (?)
+- 021 utl Medic        : improved revives
 
 
 
 Hammer
 ======
 
-I don't have good Knockout King cells, so for now go for Parts damage,
+I don't have good KnockoutKing cells, so for now go for Parts damage,
 Defense, Stamina
 
 Neutral Parts damage build
@@ -64,14 +64,26 @@ Umbral survival build
 - For the Stalker, conditioning is maybe not even that important
 - Try to go Medic +4 for the revive speed
 - Predator could be interesting
-- Tough and Iceborne +4
+- Valomyr's Burden gives pow,utl so there is not much wiggle room
+- Maybe have 2 utl Medi and don't rely on perk
 
 - 1 def Fortress
 - 1 def Tough
-- 1 def Iceborne
 - 1 mob Evasion
 - 1 mob Conditioning
-- 1 tec Medic
+- 1 pow
+- 2 utl Medic
+
+
+Valomyr's Burden
+Sight of Stone
+Shrikedown Plate
+Might of Stone
+Lightning Boots
+Any Lantern
+sho:-1 ter:1
+pow:1 mob:2 def:2 utl:2
+Tough:1 Fortress:1 Aetherhunter:1 Evasion:1 AethericFrenzy:1
 
 
 Chain Blades
@@ -83,6 +95,7 @@ Chain Blades
   for pow builds.
 
 Neutral Part damage build
+-------------------------
 
 - 1 def Fortress
 - 1 def Ass. Vigour -- can be changed on the fly for elemental defense
@@ -112,7 +125,7 @@ Low-Health build.
 
 - def Iceborne for healing, heals up to 50%
 - Some cells that give increased attack power when under 50%, which ones?
-- tec Wild Frenzy: increase attack speed when at low health (how much?)
+- tec WildFrenzy: increase attack speed when at low health (how much?)
 
 Wound build
 
@@ -140,7 +153,7 @@ Notes
   +6 = +35% damage after 15 secs
   +3 = +14% damage after 15 secs
 
-- tec Wild Frenzy
+- tec WildFrenzy
   +6 = +20% attack speed
   +3 = +12.5% attack speed
 
