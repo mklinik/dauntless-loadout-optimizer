@@ -1,39 +1,20 @@
 "Raging Crash" 	None 	Ragehunter 	Power Utility
-
 "Fall of the Shrike" 	None 	Conditioning 	Power Mobility
-
 "Quillshot's Roar" 	None 	Acidic 	Power Defence
-
 "Skarn's Vengeance" 	Terra KnockoutKing 	Power Defence
-
 "Charred Crusher" 	Blaze Aetherhunter 	Power Power
-
 "Ember Maul" 	Blaze EvasiveFury 	Power Mobility
-
 "Winter Squall" 	Frost Nimble 	Power Mobility
-
 "Thundering Maul" 	Shock AethericAttunement 	Power Defence
-
 "Nayzaga's Charge" 	Shock Savagery 	Power Utility
-
 "Pangar's Rampage" 	Frost KnockoutKing 	Power Defence
-
 "Inferno's Burden" 	Blaze Overpower 	Power Power
-
 "Storm Hammer" 	Shock AethericAttunement 	Power Mobility
-
 "Kharabak's Jaw" 	Terra Deconstruction 	Power Technique
-
 "Break of Dawn" 	Radiant Cunning 	Power Mobility
-
 "Fall of Night" 	Umbral Cunning 	Power Utility
-
 "Sovereign's Grudge" 	Terra Sharpened 	Power Utility
-
 "Stalker's Price" 	Umbral WildFrenzy 	Technique Utility
-
 "Valomyr's Burden" 	Radiant Aetherhunter 	Power Utility
-
 "Brutality of Boreus" 	Frost Conditioning 	Power Defence
-
 "Galvanic Impact" 	Shock Bond 	Prismatic Prismatic
