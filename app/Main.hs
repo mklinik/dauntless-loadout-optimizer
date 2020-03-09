@@ -11,7 +11,8 @@ import Database
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
   | weapon <-
-      [h | h@(Equipment name _ _ _ _) <- hammers, name == "Valomyr's Burden"]
+      -- [h | h@(Equipment name _ _ _ _) <- chainBlades, "Skarn" `isPrefixOf` name]
+      [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
       -- hammers
   , helm <- helms
   , bodyArmor <- bodyArmors
@@ -26,8 +27,8 @@ main = do
   let
     loadoutRequirements =
       -- optimize for frost
-      -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Shock)) $
-      -- sortOn (\(_,rests,_,_,_) ->     - (num rests Shock))     $
+      -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Blaze)) $
+      sortOn (\(_,rests,_,_,_) ->     - (num rests Blaze))     $
 
       -- sortOn (\(_,_,_,_,perks) -> - (num perks Fortress)) $
       -- sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
@@ -38,21 +39,24 @@ main = do
 
       [ x
       | x@(loadout, resist, advantage, slots, perks) <- allLoadouts
-      , num slots Mobility >= 2
-      -- , num slots Technique >= 2
-      , num slots Defensive >= 2
+      -- , num slots Mobility >= 2
+      -- , num slots Technique >= 1
+      -- , num slots Defensive >= 2
+      -- , num slots Utility >= 2
       -- , absSum advantage == 0
-      -- , num slots Defensive >= 1
       -- , num perks Warmth >= 1
       -- , num perks KnockoutKing >= 1
       -- , num perks WeightedStrikes >= 1
-      -- , num perks Conditioning >= 1
-      , num perks Fortress >= 1
-      , num perks Tough >= 1
+      , num perks Conditioning >= 1
+      , num perks Evasion >= 1
+      , num perks Fireproof >= 2
+      -- , num perks Fortress >= 1
+      -- , num perks Tough >= 1
       -- , num perks Guardian >= 1
       -- , _name (_weapon loadout) /= "Destiny of Boreus"
       -- , _name (_weapon loadout) /= "Skarn's Vengeance"
       -- , num resist Frost >= 3
+      , num resist Blaze >= 4
       ]
 
   -- print $ length allLoadouts
