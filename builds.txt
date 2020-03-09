@@ -3,29 +3,67 @@ Cores
 
 Always Good
 
+- 122 def AssassinsVigour: heal when break part
 - 010 def Fortress     : small shield
-- 122 def Ass. Vigour  : heal when break part
-- 020 def Iceborne     : increase defense when at low health, life steal
-- 015 def Tough        : increase max health and healing
-- 021 pow Sharpened    : percent Part damage
-- 001 pow KnockoutKing : percent Stagger damage
-- 020 mob Conditioning : stamina regen
+- 100 def Iceborne     : increase defense when at low health, life steal
+- 016 def Tough        : increase max health and healing
+- 003 def Guardian     : grant part of your shield to allies
+
+- 205 def Fireproof    : protect against being set on fire
+- 101 def Insuplated   : protect against being shocked
+- 114 def Warmth       : protect against being chilled and frozen
+- 011 def Bloodless    : protect against wounded and crippling wound
+- 002 def ShellshockResist: protect against being shellshocked
+
+- 022 pow Sharpened    : percent Part damage
+- 020 pow KnockoutKing : percent Stagger damage
+
 - 126 mob Agility      : decrease stamina cost of dodging
-- 002 mob Endurance    : increase max stamina
-- 021 mob Evasion      : increase dodge window
+- 100 mob Conditioning : stamina regen
+- 111 mob Evasion      : increase dodge window
+- 003 mob Endurance    : increase max stamina
+
 - 100 tec Cunning      : increase crit chance
 - 100 tec WeightedStrikes: flat Stagger damage
-- 004 tec Bladestorm   : flat Part damage
-- 003 tec Predator     : increase damage after avoiding damage
-- 110 tec WildFrenzy   : increase Attack speed when at low health
-- 021 tec Acidic       : increase Wound damage at the cost of Part damage
+- 111 tec WildFrenzy   : increase Attack speed when at low health
+- 011 tec Acidic       : increase Wound damage at the cost of Part damage
 - 020 tec Barbed       : flat Wound damage
+- 012 tec Bladestorm   : flat Part damage
+- 003 tec Predator     : increase damage after avoiding damage
 - 022 tec Savagery     : increase damage against wounded parts
+
 - 112 utl AethericFrenzy: flat Lantern charge
-- 034 utl Aeth Attune  : percent Lantern charge
 - 121 utl Conduit      : hold ability increases attack speed
-- 011 utl Aeth.Borne   : increase benefit of using aether vents
+- 034 utl AethericAttunement: percent Lantern charge
+- 011 utl Aetherborne  : increase benefit of using aether vents
 - 021 utl Medic        : improved revives
+- 016 utl Energized    : increase weapon meter gain rate
+- 005 utl Lucent       : heal over time, heal more, charge lantern
+- 013 utl StunningVigour: heal when stagger
+- 001 utl Vampiric     : heal when wound
+
+
+Don't Care About It
+
+- 022 def NineLives    : chance to halve damage and cheat death
+- 001 def Sturdy       : prevents being staggered
+
+- 103 pow Aetherhunter : +dmg vs aether charged Bs
+- 014 pow Ragehunter   : +dmg vs enraged Bs
+- 002 pow Deconstruction: +dmg vs objects created by Bs
+- 003 pow Overpower    : +dmg vs staggered Bs
+- 002 pow Pacifier     : +stagger vs enraged Bs
+
+- 013 mob FleetFooted  : increase movement speed after dodge
+- 020 mob Swift        : increase movement speed when weapon is sheathed
+- 001 mob Nimble       : restore stamina when dodging through attacks
+
+- 014 tec Adrenaline   : +dmg based on stamina spent
+- 013 tec EvasiveFury  : increase attack speed when dodging through attacks
+- 003 tec Merciless    : +Wound dmg vs staggered Bs
+- 003 tec Molten       : grants Molten Heart drops on cooldown
+
+
 
 
 
@@ -86,6 +124,38 @@ pow:1 mob:2 def:2 utl:2
 Tough:1 Fortress:1 Aetherhunter:1 Evasion:1 AethericFrenzy:1
 
 
+Embermane build
+---------------
+
+- Embermane gets staggered a lot.
+  - Maybe Overpower? But I don't have good ones.
+  - Maybe StunningVigour
+- KnockoutKing not useful
+- Could use +2 Conditioning from Boreus Hammer, free up one mob
+- Winter Squall (Nimble, pow mob)
+- Pangar's Rampage (KnockoutKing, pow def)
+- Brutality of Boreus (Conditioning, pow def)
+- Molten probably not so useful, better for Hellion and Charrogg
+
+Brutality of Boreus
+Volcanic Helm
+Fiery Breastplate
+Fiery Gauntlets
+Fiery Greaves
+Any Lantern
+blz:4 fro:-4
+pow:1 mob:1 def:3 utl:1 tec:1
+Fireproof:2 Conditioning:1 Evasion:1 EvasiveFury:1
+
+- def AssassinsVigour
+- def Fortress
+- def Tough
+- mob Conditioning
+- pow Sharpened
+- utl StunningVigour
+- tec EvasiveFury
+
+
 Chain Blades
 ============
 
@@ -116,16 +186,59 @@ mob:2 def:2 utl:1 tec:2
 Fortress:1 Conditioning:1 AethericFrenzy:1 Energized:1 Guardian:1
 
 
+Stormclaw build
+---------------
+
+- Mobility and fast attacks, preferrably maxed out shock resist.
+- This guy packs a punch
+- Question: is it better to have 4 +5 shock equipment or 4 +7 neutral?
+  - +5 shock   = 75 + 25 = 100
+  - +7 neutral = 95
+  - +7 shock   = 95 + 25 = 120 (but only drask ones)
+
+- 1 def Insuplated / Fortress / Iceborne
+- 1 def Fortress / Iceborne?
+- 1 mob Agility
+- 1 mob Conditioning
+- 1 tec WeightedStrikes -- synergizes with Skarn's Malice
+
+Skarn's Malice
+Shocking Gaze
+Lightning Plate
+Lightning Gloves
+Shocking Stride
+Any Lantern
+sho:4 ter:-4
+mob:2 def:2 utl:2 tec:1
+Energized:1 Medic:1 Insulated:2 WeightedStrikes:1
+
+- def Fortress
+- def Iceborne
+- mob Conditioning
+- mob Agility
+- tec WeightedStrikes
+- utl Medic
+- utl Medic
+
+
+
 Ideas
 =====
 
 - Fortress and Guardian have good synergy
+- Sturdy and Skarn Lantern have good synergy
+- Sturdy and Fortress have good synergy
 
 Low-Health build.
 
 - def Iceborne for healing, heals up to 50%
-- Some cells that give increased attack power when under 50%, which ones?
-- tec WildFrenzy: increase attack speed when at low health (how much?)
+- tec WildFrenzy: increase attack speed when at low health
+- Rage: +dmg when under 50% health
+  - Charrog argmor has it
+  - Boreal armor has it
+- def Fortress probably useful
+- def Tough useful? It increases max hp
+
 
 Wound build
 
@@ -144,7 +257,7 @@ Notes
   +3 =  40 shield after 10 secs
   +2 =  20 shield after 10 secs
 
-- def Iceborne
+- def Iceborne: when under 50% health
   +6 = +30% damage decrease, +8% lifesteal
   +4 = +20% damage decrease, +4% lifesteal
   +3 = +15% damage decrease
@@ -153,7 +266,11 @@ Notes
   +6 = +35% damage after 15 secs
   +3 = +14% damage after 15 secs
 
-- tec WildFrenzy
+- pow Rage: when under 50% health
+  +3 = +12% dmg
+  +6 = +25% dmg
+
+- tec WildFrenzy: when under 50% health
   +6 = +20% attack speed
   +3 = +12.5% attack speed
 
@@ -165,3 +282,35 @@ Notes
   +6 = heal revived allies +40%, +66% revive speed, gain 300 shield for 20 seconds
   +4 = heal revived allies +20%, +66% revive speed
   +3 = heal revived allies +20%
+
+- pow Overpower
+  +3 = +30% dmg vs staggered Bs
+  +6 = +60% dmg vs staggered Bs
+
+- utl StunningVigour: heal when stagger
+  +3 = 100 HP
+  +6 = 200 HP
+
+- def NineLives:
+  +3 = +12% chance to halve damage
+  +4 = +12% chance to halve damage, cheat first death and heal 400
+  +6 = +20% chance to halve damage, cheat first death and heal 400, become overpowered for 10 secs
+
+- def Sturdy: prevents being staggered
+  +3 = 80 sec cooldown
+  +6 = 15 sec cooldown
+
+- tec Adrenaline
+  +3 = +0.9% dmg for every 10 stamina missing
+  +6 = +1.8% dmg for every 10 stamina missing
+
+- tec Molten:
+  - for 8.5 secs: +10% attack speed, +20% movement speed, immune to burning
+  - duration stacks
+  +3 = two molten hearts, 23 sec cooldown
+  +4 = two molten hearts, 20 sec cooldown
+  +6 = three molten hearts, 16 sec cooldown
+
+- tec EvasiveFury +attack speed for 16 secs after dodging through attack
+  +3 = +12.5% attack speed
+  +6 = +20%   attack speed
