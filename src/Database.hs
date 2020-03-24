@@ -8,7 +8,28 @@ import Data.List
 import Histogram
 import Types
 
-weapons = hammers
+chainBlades =
+  [ Equipment "Raging Teeth"          Weapon Neutral [Ragehunter] [Technique, Utility]
+  , Equipment "Flight of the Shrike"  Weapon Neutral [Conditioning] [Technique, Mobility]
+  , Equipment "Quillshot's Bonehooks" Weapon Neutral [Acidic] [Technique, Defensive]
+  , Equipment "Winter Winds"          Weapon Frost   [Nimble] [Technique, Mobility]
+  , Equipment "Pangar's Claws"        Weapon Frost   [WeightedStrikes] [Technique, Defensive]
+  , Equipment "Destiny of Boreus"     Weapon Frost   [Conditioning] [Power, Defensive]
+  , Equipment "Charred Blades"        Weapon Blaze   [Aetherhunter] [Technique, Defensive]
+  , Equipment "Ember Blades"          Weapon Blaze   [EvasiveFury] [Technique, Mobility]
+  , Equipment "Inferno's Fangs"       Weapon Blaze   [Overpower] [Power, Power]
+  , Equipment "Thundering Cutters"    Weapon Shock   [AethericAttunement] [Technique, Power]
+  , Equipment "Nayzaga's Reach"       Weapon Shock   [Barbed] [Utility, Mobility]
+  , Equipment "Storm Blades"          Weapon Shock   [Energized] [Technique, Mobility]
+  , Equipment "Electric Cruelties"    Weapon Shock   [Bond] [Prismatic, Prismatic]
+  , Equipment "Kharabak's Wings"      Weapon Terra   [Bladestorm] [Technique, Mobility]
+  , Equipment "Skarn's Malice"        Weapon Terra   [WeightedStrikes] [Technique, Defensive]
+  , Equipment "Sovereign's Lash"      Weapon Terra   [Sharpened] [Power, Utility]
+  , Equipment "Eyes of Night"         Weapon Umbral  [Cunning] [Technique, Utility]
+  , Equipment "Stalker's Trap"        Weapon Umbral  [WildFrenzy] [Technique, Utility]
+  , Equipment "Valomyr's Revenge"     Weapon Radiant [Aetherhunter] [Power, Utility]
+  , Equipment "Fangs of Dawn"         Weapon Radiant [Cunning] [Technique, Power]
+  ]
 
 hammers =
   [ Equipment "Raging Crash"  Weapon Neutral  [Ragehunter]  [Power, Utility]
@@ -79,30 +100,6 @@ pikes =
   , Equipment "Valomyr's Hope" Weapon Radiant [Aetherhunter] [Power, Utility]
   , Equipment "Revolution of Boreus" Weapon Frost [Conditioning] [Power, Defensive]
   , Equipment "The Conductor" Weapon Shock [Bond] [Prismatic, Prismatic]
-  ]
-
-
-chainBlades =
-  [ Equipment "Raging Teeth" Weapon Neutral [Ragehunter] [Technique, Utility]
-  , Equipment "Flight of the Shrike" Weapon Neutral [Conditioning] [Technique, Mobility]
-  , Equipment "Quillshot's Bonehooks" Weapon Neutral [Acidic] [Technique, Defensive]
-  , Equipment "Skarn's Malice" Weapon Terra [WeightedStrikes] [Technique, Defensive]
-  , Equipment "Charred Blades" Weapon Blaze [Aetherhunter] [Technique, Defensive]
-  , Equipment "Winter Winds" Weapon Frost [Nimble] [Technique, Mobility]
-  , Equipment "Ember Blades" Weapon Blaze [EvasiveFury] [Technique, Mobility]
-  , Equipment "Thundering Cutters" Weapon Shock [AethericAttunement] [Technique, Power]
-  , Equipment "Nayzaga's Reach" Weapon Shock [Barbed] [Utility, Mobility]
-  , Equipment "Pangar's Claws" Weapon Frost [WeightedStrikes] [Technique, Defensive]
-  , Equipment "Inferno's Fangs" Weapon Blaze [Overpower] [Power, Power]
-  , Equipment "Storm Blades" Weapon Shock [Energized] [Technique, Mobility]
-  -- , Equipment "Kharabak's Wings" Weapon Terra [Bladestorm] [Technique, Mobility]
-  -- , Equipment "Fangs of Dawn" Weapon Radiant [Cunning] [Technique, Power]
-  -- , Equipment "Eyes of Night" Weapon Umbral [Cunning] [Technique, Utility]
-  , Equipment "Sovereign's Lash" Weapon Terra [Sharpened] [Power, Utility]
-  -- , Equipment "Stalker's Trap" Weapon Umbral [WildFrenzy] [Technique, Utility]
-  , Equipment "Valomyr's Revenge" Weapon Radiant [Aetherhunter] [Power, Utility]
-  , Equipment "Destiny of Boreus" Weapon Frost [Conditioning] [Power, Defensive]
-  , Equipment "Electric Cruelties" Weapon Shock [Bond] [Prismatic, Prismatic]
   ]
 
 

@@ -14,7 +14,7 @@ instance Ord a => Monoid (Histogram a) where
   mempty = Histogram Map.empty
 
 instance (Show a, Ord a) => Show (Histogram a) where
-  show (Histogram m) = concat $ intersperse " " [ show k ++ ":" ++ show v | (k,v) <- sort $ Map.toList m]
+  show (Histogram m) = concat $ intersperse " " [ show k ++ ":" ++ show v | (k,v) <- sort $ Map.toList m, v /= 0]
 
 inc :: Ord a => a -> Histogram a -> Histogram a
 inc a (Histogram m) = Histogram $ Map.alter (maybe (Just 1) (Just . (\n -> n+1))) a m
@@ -22,8 +22,8 @@ inc a (Histogram m) = Histogram $ Map.alter (maybe (Just 1) (Just . (\n -> n+1))
 dec :: Ord a => a -> Histogram a -> Histogram a
 dec a (Histogram m) = Histogram $ Map.alter (maybe (Just (-1)) (Just . (\n -> n-1))) a m
 
-num :: Ord a => Histogram a -> a -> Int
-num (Histogram m) a = Map.findWithDefault 0 a m
+num :: Ord a => a -> Histogram a -> Int
+num a (Histogram m) = Map.findWithDefault 0 a m
 
 absSum :: Ord a => Histogram a -> Int
 absSum (Histogram m) = sum $ map abs $ Map.elems m

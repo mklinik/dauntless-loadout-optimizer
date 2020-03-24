@@ -11,9 +11,10 @@ import Database
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
   | weapon <-
-      -- [h | h@(Equipment name _ _ _ _) <- chainBlades, "Skarn" `isPrefixOf` name]
-      [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
+      [h | h@(Equipment name _ _ _ _) <- chainBlades, "Thundering Cutters" `isInfixOf` name]
+      -- [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
       -- hammers
+      -- chainBlades
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -25,47 +26,66 @@ allLoadouts =
 main :: IO ()
 main = do
   let
-    loadoutRequirements =
-      -- optimize for frost
+    foundLoadouts =
       -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Blaze)) $
-      sortOn (\(_,rests,_,_,_) ->     - (num rests Blaze))     $
+      -- sortOn (\(_,rests,_,_,_) ->     - (num rests Blaze))     $
 
-      -- sortOn (\(_,_,_,_,perks) -> - (num perks Fortress)) $
+      -- sortOn (\(_,_,_,_,perks,_) -> - (num Fireproof perks)) $
       -- sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
 
       -- optimize for neutral
       -- sortOn (\(_,rests,_,_,_) ->     (absSum rests))     $
       -- sortOn (\(_,_,advantage,_,_) -> (absSum advantage)) $
+      sortOn (\(_,_,advantage,slots,_,_) -> - (num Technique slots)) $
+      sortOn (\(_,_,advantage,_,_,Just(_,remainingPerks)) -> absSum remainingPerks) $
 
-      [ x
-      | x@(loadout, resist, advantage, slots, perks) <- allLoadouts
-      -- , num slots Mobility >= 2
-      -- , num slots Technique >= 1
-      -- , num slots Defensive >= 2
-      -- , num slots Utility >= 2
+      [ (loadout, resist, advantage, slots, perks, remaining)
+      | (loadout, resist, advantage, slots, perks) <- allLoadouts
+      , let remaining =
+              Just (slots, perks)
+                >>= has Defensive Fortress
+                >>= has Defensive Fortress
+                >>= has Defensive Bloodless
+                >>= has Mobility Conditioning
+                >>= has Mobility Agility
+                >>= has Utility Medic
+                >>= has Utility Medic
+                -- >>= has Power Sharpened
+                -- >>= exclude   Rage
       -- , absSum advantage == 0
-      -- , num perks Warmth >= 1
-      -- , num perks KnockoutKing >= 1
-      -- , num perks WeightedStrikes >= 1
-      , num perks Conditioning >= 1
-      , num perks Evasion >= 1
-      , num perks Fireproof >= 2
-      -- , num perks Fortress >= 1
-      -- , num perks Tough >= 1
-      -- , num perks Guardian >= 1
-      -- , _name (_weapon loadout) /= "Destiny of Boreus"
-      -- , _name (_weapon loadout) /= "Skarn's Vengeance"
       -- , num resist Frost >= 3
-      , num resist Blaze >= 4
+      , maybe False (const True) remaining
+      , num Terra resist >= 3
+      -- , num Blaze advantage >= 1
       ]
 
   -- print $ length allLoadouts
-  print $ length loadoutRequirements
-  mapM_ (\(loadout,rests,advantage,slots,perks) -> do
+  print $ length foundLoadouts
+  mapM_ (\(loadout,rests,advantage,slots,perks,Just (remainingSlots,remainingPerks)) -> do
       print loadout
       print rests
+      putStrLn "has:"
       print slots
       print perks
+      putStrLn "after required:"
+      print remainingSlots
+      print remainingPerks
       putStrLn "") $
     -- take 4 $
-    loadoutRequirements
+    foundLoadouts
+
+has :: Slot -> Perk -> (Slots, Perks) -> Maybe (Slots, Perks)
+has slot perk (slots, perks)
+  | num perk perks > 0 = Just (slots, dec perk perks)
+  | num slot slots > 0 = Just (dec slot slots, perks)
+  | otherwise = Nothing
+
+-- hasPerk :: Slot -> Perk -> (Slots, Perks) -> Maybe (Slots, Perks)
+-- hasPerk perk (slots, perks)
+  -- | num perk perks > 0 = Just (slots, dec perk perks)
+  -- | otherwise = Nothing
+
+exclude :: Perk -> (Slots, Perks) -> Maybe (Slots, Perks)
+exclude perk x@(_, perks)
+  | num perk perks > 0 = Nothing
+  | otherwise = Just x
