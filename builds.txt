@@ -1,69 +1,61 @@
 Cores
 =====
 
-Always Good
-
-- 122 def AssassinsVigour: heal when break part
-- 010 def Fortress     : small shield
-- 100 def Iceborne     : increase defense when at low health, life steal
-- 016 def Tough        : increase max health and healing
-- 003 def Guardian     : grant part of your shield to allies
-
-- 205 def Fireproof    : protect against being set on fire
+- 124 def AssassinsVigour: heal when break part
+- 216 def Fireproof    : protect against being set on fire
+- 101 def Iceborne     : increase defense when at low health, life steal
 - 101 def Insuplated   : protect against being shocked
-- 114 def Warmth       : protect against being chilled and frozen
-- 011 def Bloodless    : protect against wounded and crippling wound
-- 002 def ShellshockResist: protect against being shellshocked
+- 115 def Warmth       : protect against being chilled and frozen
+- 012 def Bloodless    : protect against wounded and crippling wound
+- 012 def Fortress     : small shield
+- 023 def NineLives    : chance to halve damage and cheat death
+- 012 def Sturdy       : prevents being staggered
+- 017 def Tough        : increase max health and healing
+- 003 def Guardian     : grant part of your shield to allies
+- 003 def ShellshockResist: protect against being shellshocked
 
-- 022 pow Sharpened    : percent Part damage
-- 020 pow KnockoutKing : percent Stagger damage
-
-- 126 mob Agility      : decrease stamina cost of dodging
-- 100 mob Conditioning : stamina regen
-- 111 mob Evasion      : increase dodge window
-- 003 mob Endurance    : increase max stamina
-
-- 100 tec Cunning      : increase crit chance
-- 100 tec WeightedStrikes: flat Stagger damage
-- 111 tec WildFrenzy   : increase Attack speed when at low health
-- 011 tec Acidic       : increase Wound damage at the cost of Part damage
-- 020 tec Barbed       : flat Wound damage
-- 012 tec Bladestorm   : flat Part damage
-- 003 tec Predator     : increase damage after avoiding damage
-- 022 tec Savagery     : increase damage against wounded parts
-
-- 112 utl AethericFrenzy: flat Lantern charge
-- 121 utl Conduit      : hold ability increases attack speed
-- 034 utl AethericAttunement: percent Lantern charge
-- 011 utl Aetherborne  : increase benefit of using aether vents
-- 021 utl Medic        : improved revives
-- 016 utl Energized    : increase weapon meter gain rate
-- 005 utl Lucent       : heal over time, heal more, charge lantern
-- 013 utl StunningVigour: heal when stagger
-- 001 utl Vampiric     : heal when wound
-
-
-Don't Care About It
-
-- 022 def NineLives    : chance to halve damage and cheat death
-- 001 def Sturdy       : prevents being staggered
-
-- 103 pow Aetherhunter : +dmg vs aether charged Bs
+- 104 pow Aetherhunter : +dmg vs aether charged Bs
+- 104 pow KnockoutKing : percent Stagger damage
+- 110 pow Rage         : increase dmg when health is low
+- 103 pow Sharpened    : percent Part damage
 - 014 pow Ragehunter   : +dmg vs enraged Bs
-- 002 pow Deconstruction: +dmg vs objects created by Bs
-- 003 pow Overpower    : +dmg vs staggered Bs
-- 002 pow Pacifier     : +stagger vs enraged Bs
+- 003 pow Deconstruction: +dmg vs objects created by Bs
+- 004 pow Overpower    : +dmg vs staggered Bs
+- 003 pow Pacifier     : +stagger vs enraged Bs
+- 000 pow Discipline   : limits health to 50%, increase crit chance
 
-- 013 mob FleetFooted  : increase movement speed after dodge
-- 020 mob Swift        : increase movement speed when weapon is sheathed
-- 001 mob Nimble       : restore stamina when dodging through attacks
+- 128 mob Agility      : decrease stamina cost of dodging
+- 100 mob Conditioning : stamina regen
+- 112 mob Evasion      : increase dodge window
+- 014 mob FleetFooted  : increase movement speed after dodge
+- 022 mob Swift        : increase movement speed when weapon is sheathed
+- 004 mob Endurance    : increase max stamina
+- 003 mob Grade        : sprinting increase move speed and attack speed (?)
+- 002 mob Nimble       : restore stamina when dodging through attacks
 
-- 014 tec Adrenaline   : +dmg based on stamina spent
-- 013 tec EvasiveFury  : increase attack speed when dodging through attacks
-- 003 tec Merciless    : +Wound dmg vs staggered Bs
-- 003 tec Molten       : grants Molten Heart drops on cooldown
+- 103 tec Barbed       : flat Wound damage
+- 102 tec Cunning      : increase crit chance
+- 114 tec EvasiveFury  : increase attack speed when dodging through attacks
+- 102 tec WeightedStrikes: flat Stagger damage
+- 103 tec WildFrenzy   : increase Attack speed when at low health
+- 030 tec Acidic       : increase Wound damage at the cost of Part damage
+- 017 tec Adrenaline   : +dmg based on stamina spent
+- 023 tec Bladestorm   : flat Part damage
+- 011 tec Predator     : increase damage after avoiding damage
+- 025 tec Savagery     : increase damage against wounded parts
+- 004 tec Merciless    : +Wound dmg vs staggered Bs
+- 005 tec Molten       : grants Molten Heart drops on cooldown
 
-
+- 137 utl AethericAttunement: percent Lantern charge
+- 123 utl AethericFrenzy: flat Lantern charge
+- 221 utl Conduit      : hold ability increases attack speed
+- 019 utl Energized    : increase weapon meter gain rate
+- 114 utl Medic        : improved revives
+- 103 utl StunningVigour: heal when stagger
+- 012 utl Aetherborne  : increase benefit of using aether vents
+- 005 utl Lucent       : heal over time, heal more, charge lantern
+- 003 utl Vampiric     : heal when part is wounded
+- 001 utl Zeal         : increase effectiveness of lantern tap ability
 
 
 
@@ -137,6 +129,8 @@ Embermane build
 - Brutality of Boreus (Conditioning, pow def)
 - Molten probably not so useful, better for Hellion and Charrogg
 
+No Medic, 2xVigour, 3x def
+
 Brutality of Boreus
 Volcanic Helm
 Fiery Breastplate
@@ -153,6 +147,27 @@ Fireproof:2 Conditioning:1 Evasion:1 EvasiveFury:1
 - mob Conditioning
 - pow Sharpened
 - utl StunningVigour
+- tec EvasiveFury
+
+Alternative: +4 Medic
+---------------------
+
+Brutality of Boreus
+Shocking Gaze
+Fiery Breastplate
+Fiery Gauntlets
+Fiery Greaves
+Any Lantern
+blz:3 fro:-3 sho:1 ter:-1
+pow:1 mob:1 def:2 utl:2 tec:1
+Fireproof:1 Conditioning:1 Evasion:1 EvasiveFury:1 Medic:1
+
+- def Fortress
+- def AssassinsVigour
+- pow Sharpened
+- mob Conditioning / Evasion
+- utl StunningVigour
+- utl Medic
 - tec EvasiveFury
 
 
@@ -222,6 +237,130 @@ Energized:1 Medic:1 Insulated:2 WeightedStrikes:1
 
 
 
+
+Ember survival build
+--------------------
+
+Weapon: Frost
+
+>>= has Defensive Fortress
+>>= has Defensive Fortress
+>>= has Defensive Fireproof
+>>= has Mobility Conditioning
+>>= has Mobility Agility
+>>= has Utility Medic
+>>= has Utility Medic
+
+Destiny of Boreus
+Visage of Thorns
+Volcanic Aegis
+Fiery Gauntlets
+Hellplate Greaves
+Any Lantern
+blz:3 fro:-3 sho:-1 ter:1
+has:
+pow:2 def:1 utl:2 tec:2
+Fireproof:1 Fortress:1 Aetherhunter:1 Agility:1 Conditioning:1
+after required:
+pow:2 tec:2
+Aetherhunter:1
+
+- two tec left over, minimal garbage
+
+
+Frost survival build
+--------------------
+
+Weapon: Ember
+
+>>= has Defensive Fortress
+>>= has Defensive Fortress
+>>= has Defensive Warmth
+>>= has Mobility Conditioning
+>>= has Mobility Agility
+>>= has Utility Medic
+>>= has Utility Medic
+
+Charred Blades
+Visage of Thorns
+Core of Ice
+Skraevwing Gloves
+Skraevwing Boots
+Any Lantern
+blz:-3 fro:3 sho:-1 ter:1
+has:
+pow:1 mob:1 def:1 utl:2 tec:2
+Warmth:1 Fortress:1 Aetherhunter:1 Agility:1 Adrenaline:1
+after required:
+pow:1 tec:2
+Aetherhunter:1 Adrenaline:1
+
+- no build better than two garbage, at least garbage is somewhat useful
+
+
+Shock survival part build
+-------------------------
+
+Weapon: Souvereign Lash
+
+>>= has Defensive Fortress
+>>= has Defensive Fortress
+>>= has Defensive Insulated
+>>= has Mobility Conditioning
+>>= has Mobility Agility
+>>= has Utility Medic
+>>= has Utility Medic
+
+Sovereign's Lash
+Boreal Epiphany
+Shocking Heart
+Lightning Gloves
+Shocking Stride
+Any Lantern
+blz:-1 fro:1 sho:3 ter:-3
+has:
+pow:1 mob:1 def:2 utl:3
+Sharpened:1 Conditioning:1 Medic:1 Insulated:2
+after required:
+pow:1 utl:2
+Sharpened:1 Insulated:1
+
+- no build has any tec slots
+- doesn't come with Fortress
+
+
+Terra survival build
+--------------------
+
+>>= has Defensive Fortress
+>>= has Defensive Fortress
+>>= has Defensive Bloodless
+>>= has Mobility Conditioning
+>>= has Mobility Agility
+>>= has Utility Medic
+>>= has Utility Medic
+
+Thundering Cutters
+Visage of Thorns
+Mantle of Thorns
+Might of Stone
+Shrikedown Greaves
+Any Lantern
+sho:-3 ter:3
+has:
+pow:1 mob:1 def:1 utl:2 tec:2
+Bloodless:1 Fortress:1 Agility:1 Predator:1 AethericAttunement:1
+after required:
+pow:1 tec:2
+Predator:1 AethericAttunement:1
+
+- can swap fortress for Bloodless if needed
+- two free tec is nice
+- Predator is nice, AethericAttunement not bad
+- Can use Prismatic cells also?
+- Electric Cruelties are good weapon. But hard to get I guess.
+
+
 Ideas
 =====
 
@@ -236,6 +375,8 @@ Low-Health build.
 - Rage: +dmg when under 50% health
   - Charrog argmor has it
   - Boreal armor has it
+- Lady luck has a cell that keeps your health below 50% and increases crit
+  chance
 - def Fortress probably useful
 - def Tough useful? It increases max hp
 
