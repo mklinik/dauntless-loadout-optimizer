@@ -65,6 +65,7 @@ data Perk
   | KnockoutKing
   | Overpower
   | Pacifier
+  | Discipline
   
   -- Mobility
   | Agility

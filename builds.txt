@@ -174,70 +174,6 @@ Fireproof:1 Conditioning:1 Evasion:1 EvasiveFury:1 Medic:1
 Chain Blades
 ============
 
-- I have +3 tec Weighted Strikes; could go for stagger build instead of part
-  build
-- It seems that Chain Blades have more options for tec builds, less options
-  for pow builds.
-
-Neutral Part damage build
--------------------------
-
-- 1 def Fortress
-- 1 def Ass. Vigour -- can be changed on the fly for elemental defense
-- 1 mob Conditioning
-- 1 mob Agility     -- Evasion better for hammer; Agility better for Blades
-- 2 tec Any good ones -- once I have upgraded Bladestorm, use them!
-
-- Ass. Vigour synergizes with Bladestorm, which I don't have yet
-
-Flight of the Shrike
-Lightning Helm
-Heart of Stone
-Might of Stone
-Lightning Boots
-Any Lantern
-sho:0 ter:0
-mob:2 def:2 utl:1 tec:2
-Fortress:1 Conditioning:1 AethericFrenzy:1 Energized:1 Guardian:1
-
-
-Stormclaw build
----------------
-
-- Mobility and fast attacks, preferrably maxed out shock resist.
-- This guy packs a punch
-- Question: is it better to have 4 +5 shock equipment or 4 +7 neutral?
-  - +5 shock   = 75 + 25 = 100
-  - +7 neutral = 95
-  - +7 shock   = 95 + 25 = 120 (but only drask ones)
-
-- 1 def Insuplated / Fortress / Iceborne
-- 1 def Fortress / Iceborne?
-- 1 mob Agility
-- 1 mob Conditioning
-- 1 tec WeightedStrikes -- synergizes with Skarn's Malice
-
-Skarn's Malice
-Shocking Gaze
-Lightning Plate
-Lightning Gloves
-Shocking Stride
-Any Lantern
-sho:4 ter:-4
-mob:2 def:2 utl:2 tec:1
-Energized:1 Medic:1 Insulated:2 WeightedStrikes:1
-
-- def Fortress
-- def Iceborne
-- mob Conditioning
-- mob Agility
-- tec WeightedStrikes
-- utl Medic
-- utl Medic
-
-
-
-
 Ember survival build
 --------------------
 
@@ -298,8 +234,8 @@ Aetherhunter:1 Adrenaline:1
 - no build better than two garbage, at least garbage is somewhat useful
 
 
-Shock survival part build
--------------------------
+Shock survival build
+--------------------
 
 Weapon: Souvereign Lash
 
@@ -359,6 +295,19 @@ Predator:1 AethericAttunement:1
 - Predator is nice, AethericAttunement not bad
 - Can use Prismatic cells also?
 - Electric Cruelties are good weapon. But hard to get I guess.
+
+
+Neutral Low-Health Build
+------------------------
+
+- 2 def Iceborne
+- 1 pow Discipline
+- 2 tec WildFrenzy (attack speed)
+- 2 pow Rage (damage)
+- Can we have Conditioning?
+- Yes. Fortress would be nice.
+- Maybe even better with Prismatic cells?
+- What if 2 medic instead of Fortress?
 
 
 Ideas

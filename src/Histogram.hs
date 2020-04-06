@@ -2,7 +2,7 @@ module Histogram where
 
 import qualified Data.Map as Map
 import Data.Map (Map)
-
+import Data.Foldable
 import Data.List
 
 newtype Histogram a = Histogram (Map a Int)
@@ -27,3 +27,6 @@ num a (Histogram m) = Map.findWithDefault 0 a m
 
 absSum :: Ord a => Histogram a -> Int
 absSum (Histogram m) = sum $ map abs $ Map.elems m
+
+maxElem :: Ord a => Histogram a -> Int
+maxElem (Histogram m) = maximum m

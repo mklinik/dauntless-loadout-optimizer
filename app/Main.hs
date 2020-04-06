@@ -11,10 +11,10 @@ import Database
 allLoadouts =
   [ (l, loadoutResistances l, loadoutAdvantage l, loadoutSlots l, loadoutPerks l)
   | weapon <-
-      [h | h@(Equipment name _ _ _ _) <- chainBlades, "Thundering Cutters" `isInfixOf` name]
+      -- [h | h@(Equipment name _ _ _ _) <- chainBlades, "Thundering Cutters" `isInfixOf` name]
       -- [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
       -- hammers
-      -- chainBlades
+      chainBlades
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -35,27 +35,37 @@ main = do
 
       -- optimize for neutral
       -- sortOn (\(_,rests,_,_,_) ->     (absSum rests))     $
-      -- sortOn (\(_,_,advantage,_,_) -> (absSum advantage)) $
-      sortOn (\(_,_,advantage,slots,_,_) -> - (num Technique slots)) $
+      -- sortOn (\(_,_,advantage,_,_,_) -> (absSum advantage)) $
+      -- sortOn (\(_,_,advantage,slots,_,_) -> - (num Technique slots)) $
+
+      -- sort by less garbage
       sortOn (\(_,_,advantage,_,_,Just(_,remainingPerks)) -> absSum remainingPerks) $
 
       [ (loadout, resist, advantage, slots, perks, remaining)
       | (loadout, resist, advantage, slots, perks) <- allLoadouts
       , let remaining =
               Just (slots, perks)
-                >>= has Defensive Fortress
-                >>= has Defensive Fortress
-                >>= has Defensive Bloodless
+                >>= has Defensive Iceborne
+                >>= has Defensive Iceborne
+                >>= has Power Discipline
+                >>= has Technique WildFrenzy
+                >>= has Technique WildFrenzy
+                >>= has Power Rage
+                >>= has Power Rage
                 >>= has Mobility Conditioning
-                >>= has Mobility Agility
                 >>= has Utility Medic
                 >>= has Utility Medic
+                -- >>= has Mobility Agility
+                -- >>= has Defensive Fortress
+                -- >>= has Defensive Fortress
                 -- >>= has Power Sharpened
                 -- >>= exclude   Rage
       -- , absSum advantage == 0
+      -- , absSum resist <= 4
       -- , num resist Frost >= 3
+      , maxElem resist <= 1
       , maybe False (const True) remaining
-      , num Terra resist >= 3
+      -- , num Terra resist >= 3
       -- , num Blaze advantage >= 1
       ]
 
