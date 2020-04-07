@@ -342,6 +342,8 @@ Tough:2 WildFrenzy:1 Rage:1 Iceborne:1
 after required:
 def:1
 
+Variant, pow instead of def
+
 Stalker's Trap
 Sight of Stone
 Boreal Resolve
@@ -405,14 +407,14 @@ Cunning:1
 Checklist
 ---------
 
-Weapons (both can be swapped for Pike)
-[ ] +10 Stalker's Trap
+Weapons (both can swap Pike and Blades)
+[ ] +10 Stalker's Pike
 [ ] +10 Fangs of Dawn
 
 Armor
 [ ] +10 Boreal March
 [ ] +10 Boreal Might
-([ ] +10 Boreal Resolve optional; for pow variant)
+([ ] +10 Boreal Resolve optional; for pow variant instead of def)
 [ ] +10 Gnasher Cloak
 [ ] +10 Sight of Stone
 [ ] +10 Volcanic Grips
