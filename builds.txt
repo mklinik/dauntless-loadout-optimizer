@@ -308,6 +308,122 @@ Neutral Low-Health Build
 - Yes. Fortress would be nice.
 - Maybe even better with Prismatic cells?
 - What if 2 medic instead of Fortress?
+- Question: does +6 Iceborne even need Fortress?
+- What about Tough?
+- Tough's healing effect applies to lifesteal as well
+- So definitely Tough over Fortress
+- And is Discipline really needed? How to get below 50% Health then? What about
+  healing potions, don't they bring you above 50?
+- Doesn't matter, that pow can be used for something else.
+- Must be able to get +6 Fireproof for Blaze lava (or maybe different build for that)
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Technique WildFrenzy
+>>= has Technique WildFrenzy
+>>= has Power Rage
+>>= has Power Rage
+>>= has Utility Medic
+>>= has Utility Medic
+>>= hasSlot Technique
+>>= has Defensive Tough
+>>= has Defensive Tough
+
+Stalker's Trap
+Sight of Stone
+Gnasher Cloak
+Boreal Might
+Boreal March
+Any Lantern
+blz:-2 fro:2 sho:-1 ter:1
+has:
+pow:1 def:2 utl:2 tec:2
+Tough:2 WildFrenzy:1 Rage:1 Iceborne:1
+after required:
+def:1
+
+Stalker's Trap
+Sight of Stone
+Boreal Resolve
+Boreal Might
+Boreal March
+Any Lantern
+blz:-3 fro:3 sho:-1 ter:1
+has:
+pow:1 def:2 utl:2 tec:2
+Tough:1 WildFrenzy:1 Rage:2 Iceborne:1
+after required:
+pow:1
+
+- Umbral weapon
+- one free tec slot
+- for everything except blaze, umbral
+- two options (one pow/one def) by switching the torso
+- still gives some options for tec/pow/def
+  - pow can go Deconstruction, Discipline, Sharpened
+  - tec can go WeightedStrikes, Bladestorm, Barbed
+  - def could try Sturdy, maybe Fortress
+
+
+Same for blaze and umbral
+------------------------
+
+- Needs option for +6 Fireproof
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Technique WildFrenzy
+>>= has Technique WildFrenzy
+>>= has Power Rage
+>>= has Power Rage
+>>= has Utility Medic
+>>= has Defensive Tough
+>>= has Defensive Fireproof
+>>= hasSlot Defensive
+
+Fangs of Dawn
+Volcanic Helm
+Gnasher Cloak
+Volcanic Grips
+Boreal March
+Any Lantern
+blz:1 fro:-1
+has:
+pow:1 def:2 utl:2 tec:2
+Fireproof:1 Tough:1 Cunning:1 Rage:1 Iceborne:1
+after required:
+utl:1
+Cunning:1
+
+- can go +6 medic
+- no free tec slot, doesn't matter
+- can go +6 Fireproof +3 Tough for Blaze
+- can go +6 Tough for Umbral
+
+
+
+Checklist
+---------
+
+Weapons (both can be swapped for Pike)
+[ ] +10 Stalker's Trap
+[ ] +10 Fangs of Dawn
+
+Armor
+[ ] +10 Boreal March
+[ ] +10 Boreal Might
+([ ] +10 Boreal Resolve optional; for pow variant)
+[ ] +10 Gnasher Cloak
+[ ] +10 Sight of Stone
+[ ] +10 Volcanic Grips
+[ ] +10 Volcanic Helm
+
+Cells
+[ ] 1 +3 Tough
+[ ] 2 +3 WildFrenzy
+[ ] 1 +3 Iceborne
+[ ] 1 +3 Rage
+
 
 
 Ideas

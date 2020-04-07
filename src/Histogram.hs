@@ -29,4 +29,7 @@ absSum :: Ord a => Histogram a -> Int
 absSum (Histogram m) = sum $ map abs $ Map.elems m
 
 maxElem :: Ord a => Histogram a -> Int
-maxElem (Histogram m) = maximum m
+maxElem (Histogram m) =
+  if null m
+    then 0
+    else maximum m
