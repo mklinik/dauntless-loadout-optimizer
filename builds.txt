@@ -367,6 +367,40 @@ pow:1
   - def could try Sturdy, maybe Fortress
 
 
+- Nope, I want Conditioning! Willing to give up the tec slot? Or the +6 Medic?
+- Also, one spare def would be nice
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Technique WildFrenzy
+>>= has Technique WildFrenzy
+>>= has Power Rage
+>>= has Power Rage
+>>= has Utility Medic
+>>= hasSlot Defensive
+>>= has Mobility Conditioning
+>>= has Defensive Tough
+>>= has Defensive Tough
+
+Scream of the Shrike
+Sight of Stone
+Gnasher Cloak
+Boreal Might
+Boreal March
+Any Lantern
+blz:-2 fro:2 sho:-1 ter:1
+has:
+pow:1 mob:1 def:2 utl:1 tec:2
+Tough:2 Conditioning:1 Rage:1 Iceborne:1
+after required:
+mob:1
+
+- Neutral weapon, can use blades or pike
+- spare def slot
+- Conditioning
+- spare mob slot
+- It's the same loadout as before, only the weapon is different. NICE!!!
+
 Same for blaze and umbral
 ------------------------
 
@@ -403,28 +437,58 @@ Cunning:1
 - can go +6 Tough for Umbral
 
 
+Can I have Conditioning in this one?
+Yes, with blz:-1 and shrike weapon
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Technique WildFrenzy
+>>= has Technique WildFrenzy
+>>= has Power Rage
+>>= has Power Rage
+>>= has Utility Medic
+>>= has Defensive Tough
+>>= has Defensive Fireproof
+>>= hasSlot Defensive
+>>= has Mobility Conditioning
+
+Scream of the Shrike
+Volcanic Helm
+Gnasher Cloak
+Boreal Might
+Boreal March
+Any Lantern
+blz:-1 fro:1
+has:
+pow:1 mob:1 def:2 utl:1 tec:2
+Fireproof:1 Tough:1 Conditioning:1 Rage:1 Iceborne:1
+after required:
+mob:1
+
+- Can have Conditioning and Agility, which is nice.
+- Neutral weapon also welcome
+
 
 Checklist
 ---------
 
 Weapons (both can swap Pike and Blades)
 [ ] +10 Stalker's Pike
-[ ] +10 Fangs of Dawn
+[ ] +10 Fangs of Dawn / Godhand / Pike of Dawn
 
 Armor
-[ ] +10 Boreal March
-[ ] +10 Boreal Might
+[x] +10 Boreal March
+[x] +10 Boreal Might
 ([ ] +10 Boreal Resolve optional; for pow variant instead of def)
 [ ] +10 Gnasher Cloak
-[ ] +10 Sight of Stone
-[ ] +10 Volcanic Grips
+[x] +10 Sight of Stone
 [ ] +10 Volcanic Helm
 
 Cells
 [ ] 1 +3 Tough
-[ ] 2 +3 WildFrenzy
-[ ] 1 +3 Iceborne
-[ ] 1 +3 Rage
+[x] 2 +3 WildFrenzy
+[x] 1 +3 Iceborne
+[x] 1 +3 Rage
 
 
 

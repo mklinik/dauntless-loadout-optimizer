@@ -14,8 +14,8 @@ allLoadouts =
       -- [h | h@(Equipment name _ _ _ _) <- chainBlades, "Thundering Cutters" `isInfixOf` name]
       -- [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
       -- hammers
-      chainBlades
-      -- pikes
+      -- chainBlades
+      pikes
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -50,24 +50,15 @@ main = do
               Just (slots, perks)
                 >>= has Defensive Iceborne
                 >>= has Defensive Iceborne
-                -- >>= has Power Discipline
                 >>= has Technique WildFrenzy
                 >>= has Technique WildFrenzy
                 >>= has Power Rage
                 >>= has Power Rage
                 >>= has Utility Medic
-                -- >>= has Utility Medic
-                -- >>= hasSlot Technique
-                -- >>= has Technique Bladestorm
-                -- >>= hasSlot Defensive
-                -- >>= hasSlot Defensive
-                -- >>= hasSlot Power
-                -- >>= has Utility Medic
                 >>= has Defensive Tough
-                -- >>= has Defensive Tough
                 >>= has Defensive Fireproof
                 >>= hasSlot Defensive
-                -- >>= has Defensive Fireproof
+                >>= has Mobility Conditioning
       , maybe False (const True) remaining
       -- , absSum advantage == 0
       -- , absSum resist <= 4
@@ -81,7 +72,7 @@ main = do
       -- , num Shock resist >= -2
       -- , num Umbral resist >= -2
       -- , num Radiant resist >= -2
-      , num Radiant advantage >= 1
+      -- , num Radiant advantage >= 1
       ]
 
   -- print $ length allLoadouts
