@@ -51,6 +51,7 @@ pikes =
   , Equipment "Stalker's Spike"      Weapon Umbral  [WildFrenzy] [Technique, Utility]
   , Equipment "Valomyr's Hope"       Weapon Radiant [Aetherhunter] [Power, Utility]
   , Equipment "Spire of Dawn"        Weapon Radiant [Cunning] [Technique, Power]
+  , Equipment "The Godhand"          Weapon Radiant [] [Technique, Power]
   , Equipment "The Conductor"        Weapon Shock   [Bond] [Prismatic, Prismatic]
   ]
 
