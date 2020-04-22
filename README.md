@@ -1,4 +1,4 @@
-# dauntless-equipment
+# Dauntless Loadout Optimizer
 
 Loadout optimizer for Dauntless.
 
