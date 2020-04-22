@@ -88,6 +88,7 @@ whatever you like.
 ## Another Example
 
 Flexible low-health build. Built around Iceborne, Rage, WildFrenzy.
+Usable for all elementals.
 
 You specify:
 
