@@ -28,7 +28,7 @@ figure it out.
 
         $ stack run | less
 
-## Example:
+## Example
 
 Ember survival build: built around Fortress and Fireproof for chain blades,
 which I like playing with Conditioning and Agility. I found playing with
