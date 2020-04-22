@@ -48,7 +48,7 @@ You specify:
     , num Blaze resist >= 3
     , num Frost advantage >= 1
 
-gives 145 options, sorted by number of remaining slots
+The program gives you 145 options, sorted by number of remaining slots:
 
     145
     Revolution of Boreus
