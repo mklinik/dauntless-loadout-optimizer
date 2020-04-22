@@ -80,3 +80,46 @@ gives 145 options, sorted by number of remaining slots
 
 From there you can refine more, or just look through the results and pick
 whatever you like.
+
+
+## Another Example
+
+Flexible low-health build. Built around Iceborne, Rage, WildFrenzy.
+
+You specify:
+
+    >>= has Defensive Iceborne
+    >>= has Defensive Iceborne
+    >>= has Technique WildFrenzy
+    >>= has Power Rage
+    >>= has Power Rage
+    >>= has Utility Medic
+    >>= has Utility Medic
+    >>= hasSlot Defensive
+    >>= has Mobility Conditioning
+    >>= has Defensive Tough
+    >>= has Defensive Tough
+    -- no weapon restriction
+    -- no further armor restriction
+
+You get 22 loadouts, most with left-over garbage perks, but one has a free def
+slot:
+
+    Destiny of Boreus
+    Sight of Stone
+    Gnasher Cloak
+    Volcanic Grips
+    Boreal March
+    Any Lantern
+    sho:-1 ter:1
+    has:
+    pow:1 def:3 utl:2 tec:1
+    Tough:2 Conditioning:1 Rage:1 Iceborne:1
+    after required:
+    def:1
+
+- Give up 1 WildFrenzy for +3 Conditioning and +6 Medic
+- has two free def slots, allows +6 Fortress for ultimate survivability or +6
+  any elemental defense (Fireproof, Insulated, etc)
+- Must use Boreus blades or pike (Conditioning, pow, def)
+- Can use Shrike blades or pike (Conditioning, tec, mob) in exchange for 1 Rage
