@@ -26,7 +26,7 @@ figure it out.
 - On the command line, go to the source directory and run stack
 - I'm using linux, I run it like this:
 
-    $ stack run | less
+        $ stack run | less
 
 ## Example:
 
