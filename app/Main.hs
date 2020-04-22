@@ -92,12 +92,14 @@ main = do
     -- take 4 $
     foundLoadouts
 
+-- Require either the given slot or the given perk; favours perk
 has :: Slot -> Perk -> (Slots, Perks) -> Maybe (Slots, Perks)
 has slot perk (slots, perks)
   | num perk perks > 0 = Just (slots, dec perk perks)
   | num slot slots > 0 = Just (dec slot slots, perks)
   | otherwise = Nothing
 
+-- Require the given slot
 hasSlot :: Slot -> (Slots, Perks) -> Maybe (Slots, Perks)
 hasSlot slot (slots, perks)
   | num slot slots > 0 = Just (dec slot slots, perks)
