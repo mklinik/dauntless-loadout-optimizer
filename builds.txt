@@ -400,6 +400,44 @@ mob:1
 - Conditioning
 - spare mob slot
 - It's the same loadout as before, only the weapon is different. NICE!!!
+- only +3 Medic :(
+
+
+Alternative:
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Technique WildFrenzy
+>>= has Power Rage
+>>= has Power Rage
+>>= has Utility Medic
+>>= has Utility Medic
+>>= hasSlot Defensive
+>>= has Mobility Conditioning
+>>= has Defensive Tough
+>>= has Defensive Tough
+
+Destiny of Boreus
+Sight of Stone
+Gnasher Cloak
+Volcanic Grips
+Boreal March
+Any Lantern
+sho:-1 ter:1
+has:
+pow:1 def:3 utl:2 tec:1
+Tough:2 Conditioning:1 Rage:1 Iceborne:1
+after required:
+def:1
+
+- Give up 1 WildFrenzy for +3 Conditioning and +6 Medic
+- two free def slots, allows +6 Fortress or +6 any elemental defense
+  (Fireproof, Insulated, etc)
+- Must use Boreus blade or pike (Conditioning, pow, def)
+- Can use Shrike (Conditioning, tec, mob) and give up 1 Rage
+
+
+
 
 Same for blaze and umbral
 ------------------------
@@ -469,28 +507,52 @@ mob:1
 - Neutral weapon also welcome
 
 
-Checklist
+
+The Godhand Build
+-----------------
+
+- Want Energized: weapon meter gain rate
+- Sacrifice Medic
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Technique WildFrenzy
+>>= has Power Rage
+>>= has Power Rage
+>>= has Utility Energized
+>>= has Utility Energized
+>>= has Mobility Conditioning
+>>= has Defensive Tough
+>>= has Defensive Tough
+
+The Godhand
+Sight of Stone
+Gnasher Cloak
+Volcanic Grips
+Dance of the Swarm
+Any Lantern
+blz:1 fro:-1 sho:-2 ter:2
+has:
+pow:2 def:2 utl:2 tec:1
+Tough:2 Conditioning:1 Rage:1
+after required:
+pow:1
+
+- no elemental resistances
+- pure Godhand damage
+- Alternative cells, same loadout: screw Iceborne and Rage, go Fortress and
+  Ragehunter; keep Tough for some survivability; instead of Fortress can also
+  go elemental. Or keep Iceborne, useful still.
+
+TODO list
 ---------
 
-Weapons (both can swap Pike and Blades)
-[ ] +10 Stalker's Pike
-[ ] +10 Fangs of Dawn / Godhand / Pike of Dawn
+- For Godhand and alternative Iceborne build
 
-Armor
-[x] +10 Boreal March
-[x] +10 Boreal Might
-([ ] +10 Boreal Resolve optional; for pow variant instead of def)
-[ ] +10 Gnasher Cloak
-[x] +10 Sight of Stone
-[ ] +10 Volcanic Helm
-
-Cells
-[ ] 1 +3 Tough
-[x] 2 +3 WildFrenzy
-[x] 1 +3 Iceborne
-[x] 1 +3 Rage
-
-
+- [ ] +10 Volcanic Grips
+- [ ] +10 Dance of the Swarm
+- [ ] 2 +3 utl Energized cells
+- [ ] +10 Destiny of Boreus (blades) / +10 Revolution of Boreus (pike)
 
 Ideas
 =====
@@ -586,3 +648,11 @@ Notes
 - tec EvasiveFury +attack speed for 16 secs after dodging through attack
   +3 = +12.5% attack speed
   +6 = +20%   attack speed
+
+- def Tough
+  +3 = Increases Max Health by 150; Increased healing from all sources by 15%
+  +6 = Increases Max Health by 500; Increased healing from all sources by 50%
+
+- utl Energized
+  +3 = +20% Weapon Charge rate
+  +6 = +40% Weapon Charge rate

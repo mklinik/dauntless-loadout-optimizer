@@ -13,6 +13,7 @@ allLoadouts =
   | weapon <-
       -- [h | h@(Equipment name _ _ _ _) <- chainBlades, "Thundering Cutters" `isInfixOf` name]
       -- [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
+      -- [w | w@(Equipment name _ _ _ _) <- pikes, "Godhand" `isInfixOf` name]
       -- hammers
       -- chainBlades
       pikes
@@ -51,14 +52,15 @@ main = do
                 >>= has Defensive Iceborne
                 >>= has Defensive Iceborne
                 >>= has Technique WildFrenzy
-                >>= has Technique WildFrenzy
+                -- >>= has Technique WildFrenzy
                 >>= has Power Rage
                 >>= has Power Rage
                 >>= has Utility Medic
-                >>= has Defensive Tough
-                >>= has Defensive Fireproof
+                >>= has Utility Medic
                 >>= hasSlot Defensive
                 >>= has Mobility Conditioning
+                >>= has Defensive Tough
+                >>= has Defensive Tough
       , maybe False (const True) remaining
       -- , absSum advantage == 0
       -- , absSum resist <= 4
