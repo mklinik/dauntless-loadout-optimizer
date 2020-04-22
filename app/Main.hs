@@ -52,7 +52,6 @@ main = do
                 >>= has Defensive Iceborne
                 >>= has Defensive Iceborne
                 >>= has Technique WildFrenzy
-                -- >>= has Technique WildFrenzy
                 >>= has Power Rage
                 >>= has Power Rage
                 >>= has Utility Medic
@@ -67,14 +66,14 @@ main = do
       -- , num resist Frost >= 3
       -- , maxElem resist <= 1
       -- , num Terra resist >= 3
-      -- , num Blaze resist >= -2
+      -- , num Blaze resist >= 3
       -- , num Frost resist >= -2
       -- , num Terra resist >= -2
       -- , num Blaze resist >= -1
       -- , num Shock resist >= -2
       -- , num Umbral resist >= -2
       -- , num Radiant resist >= -2
-      -- , num Radiant advantage >= 1
+      -- , num Frost advantage >= 1
       ]
 
   -- print $ length allLoadouts

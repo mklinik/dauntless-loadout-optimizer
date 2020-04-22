@@ -12,7 +12,10 @@ The database is incomplete, I'm using mostly chain blades and pikes, so those ar
 No support for exotic weapons / equipment.
 I wrote it for myself to explore loadouts, you can use it at your own risk.
 
-This program has no graphical user interface. You have to modify the main function and run it.
+This program has no graphical user interface.
+You have to modify the main function and run it.
+Some programming skills required, even if you don't know Haskell you can maybe
+figure it out.
 
 
 ## How to use this
