@@ -105,8 +105,8 @@ You specify:
     -- no weapon restriction
     -- no further armor restriction
 
-You get 22 loadouts, most with left-over garbage perks, but one has a free def
-slot:
+You get 22 loadouts, most with left-over garbage perks, but this one has no
+garbage and a free def slot:
 
     Destiny of Boreus
     Sight of Stone
@@ -121,8 +121,8 @@ slot:
     after required:
     def:1
 
-- Give up 1 WildFrenzy for +3 Conditioning and +6 Medic
-- has two free def slots, allows +6 Fortress for ultimate survivability or +6
+- Has only +3 WildFrenzy in favour of +3 Conditioning and +6 Medic
+- has two free def slots, allows +6 Fortress for even more survivability or +6
   any elemental defense (Fireproof, Insulated, etc)
 - Must use Boreus blades or pike (Conditioning, pow, def)
 - Can use Shrike blades or pike (Conditioning, tec, mob) in exchange for 1 Rage
