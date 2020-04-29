@@ -16,7 +16,8 @@ allLoadouts =
       -- [w | w@(Equipment name _ _ _ _) <- pikes, "Godhand" `isInfixOf` name]
       -- hammers
       -- chainBlades
-      pikes
+      -- pikes
+      strikers
   , helm <- helms
   , bodyArmor <- bodyArmors
   , gauntlet <- gauntlets
@@ -51,15 +52,17 @@ main = do
               Just (slots, perks)
                 >>= has Defensive Iceborne
                 >>= has Defensive Iceborne
-                >>= has Technique WildFrenzy
+                >>= has Defensive Tough
+                >>= has Defensive Tough
                 >>= has Power Rage
                 >>= has Power Rage
-                >>= has Utility Medic
-                >>= has Utility Medic
-                >>= hasSlot Defensive
                 >>= has Mobility Conditioning
-                >>= has Defensive Tough
-                >>= has Defensive Tough
+                >>= has Technique Berserker
+                >>= has Technique EvasiveFury
+                >>= has Power Discipline
+                >>= hasSlot Utility
+                >>= hasSlot Utility
+                -- >>= hasSlot Defensive
       , maybe False (const True) remaining
       -- , absSum advantage == 0
       -- , absSum resist <= 4
@@ -73,7 +76,7 @@ main = do
       -- , num Shock resist >= -2
       -- , num Umbral resist >= -2
       -- , num Radiant resist >= -2
-      -- , num Frost advantage >= 1
+      , num Blaze advantage >= 1
       ]
 
   -- print $ length allLoadouts

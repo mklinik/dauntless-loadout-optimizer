@@ -403,38 +403,44 @@ mob:1
 - only +3 Medic :(
 
 
-Alternative:
+Alternative
 
 >>= has Defensive Iceborne
 >>= has Defensive Iceborne
->>= has Technique WildFrenzy
+>>= has Defensive Tough
+>>= has Defensive Tough
 >>= has Power Rage
 >>= has Power Rage
+>>= has Technique Molten
+>>= has Technique Molten
 >>= has Utility Medic
 >>= has Utility Medic
 >>= hasSlot Defensive
 >>= has Mobility Conditioning
->>= has Defensive Tough
->>= has Defensive Tough
 
-Destiny of Boreus
+XXX Current
+
+Boreus Pike / Blades
 Sight of Stone
-Gnasher Cloak
-Volcanic Grips
+Shocking Heart
+Hellplate Bracers
 Boreal March
 Any Lantern
-sho:-1 ter:1
-has:
-pow:1 def:3 utl:2 tec:1
-Tough:2 Conditioning:1 Rage:1 Iceborne:1
-after required:
-def:1
 
-- Give up 1 WildFrenzy for +3 Conditioning and +6 Medic
-- two free def slots, allows +6 Fortress or +6 any elemental defense
-  (Fireproof, Insulated, etc)
-- Must use Boreus blade or pike (Conditioning, pow, def)
-- Can use Shrike (Conditioning, tec, mob) and give up 1 Rage
+has:
+pow:2 def:3 utl:1 tec:1
+Tough:1 Conditioning:1 Molten:1 Medic:1 Iceborne:1
+after required:
+
+- This is awesome!
+- The ultimate all-round build
+- No elemental weaknesses
+- +6 Iceborne / Tough / Rage
+- +6 Molten for speed and fire defense
+- +3 Conditioning
+- +6 Medic
+- free def slot
+- no garbage
 
 
 
@@ -508,51 +514,113 @@ mob:1
 
 
 
+
 The Godhand Build
 -----------------
 
 - Want Energized: weapon meter gain rate
 - Sacrifice Medic
+- No wait, I want Iceborne, Rage, Energized, Ragehunter, Tough
 
 >>= has Defensive Iceborne
 >>= has Defensive Iceborne
->>= has Technique WildFrenzy
 >>= has Power Rage
 >>= has Power Rage
+>>= has Power Ragehunter
+>>= has Power Ragehunter
 >>= has Utility Energized
 >>= has Utility Energized
->>= has Mobility Conditioning
+>>= has Technique Molten
 >>= has Defensive Tough
 >>= has Defensive Tough
+
+XXX Current
 
 The Godhand
 Sight of Stone
-Gnasher Cloak
+Boreal Resolve
 Volcanic Grips
-Dance of the Swarm
+Gnasher Treads
 Any Lantern
-blz:1 fro:-1 sho:-2 ter:2
+sho:-1 ter:1
 has:
 pow:2 def:2 utl:2 tec:1
-Tough:2 Conditioning:1 Rage:1
+Tough:2 Rage:2
 after required:
-pow:1
 
-- no elemental resistances
-- pure Godhand damage
-- Alternative cells, same loadout: screw Iceborne and Rage, go Fortress and
-  Ragehunter; keep Tough for some survivability; instead of Fortress can also
-  go elemental. Or keep Iceborne, useful still.
+Alternative
 
-TODO list
----------
+The Godhand
+Sight of Stone
+Boreal Resolve
+Hellplate Bracers
+Gnasher Treads
+Any Lantern
+sho:-1 ter:1
+has:
+pow:3 def:2 utl:1 tec:1
+Tough:2 Molten:1 Rage:1
+after required:
+
+- +6 Iceborne / Tough / Rage
+- +6 Ragehunter
+- +6 Molten
+- Lantern: +3 Energized
+- very similar
+- only difference is Hellion Hands instead of Charrog Hands
+- Can be used with different weapon, for different purposes as well
+  - Then we go +6 Molten +6 Rage +6 Ragehunter, because Energized is utl
+- first of all I need Godhand, then see if +3 Energized is enough to
+  consistently power the beam
+- Does the beam benefit from Sturdy? Could replace Tough with Sturdy
+- But this is the Godhand build, it doesn't need to be flexible. I want +6 Energized!
+
+
+XXX TODO list
+-------------
 
 - For Godhand and alternative Iceborne build
 
+- [ ] +10 Shocking Heart
+- [ ] +10 Hellplate Bracers
 - [ ] +10 Volcanic Grips
-- [ ] +10 Dance of the Swarm
-- [ ] 2 +3 utl Energized cells
+- [ ] +10 Gnasher Treads
+- [ ] +10 Boreal Resolve
+- [ ] 1 +3 utl Energized cells
+- [ ] 2 +3 tec Molten cells
 - [ ] +10 Destiny of Boreus (blades) / +10 Revolution of Boreus (pike)
+- [ ] +10 Godhand
+
+
+
+XXX Strikers
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Defensive Tough
+>>= has Defensive Tough
+>>= has Power Rage
+>>= has Power Rage
+>>= has Mobility Conditioning
+>>= has Technique Berserker
+>>= has Technique EvasiveFury
+>>= has Power Discipline
+>>= has Utility Medic
+>>= has Utility Medic
+
+Ember Fists [EvasiveFury]
+Sight of Stone [Tough]
+Shocking Heart [Medic]
+Boreal Might [Rage]
+Gnasher Treads [Tough]
+Any Lantern []
+blz:-1 fro:1
+has:
+pow:2 mob:1 def:2 utl:1 tec:1
+Tough:2 EvasiveFury:1 Medic:1 Rage:1
+after required:
+
+
 
 Ideas
 =====
