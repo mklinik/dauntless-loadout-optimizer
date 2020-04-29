@@ -16,7 +16,7 @@ data Equipment = Equipment
   deriving (Eq)
 
 instance Show Equipment where
-  show (Equipment{..}) = _name
+  show (Equipment{..}) = _name ++ " " ++ show _slots ++ " " ++ show _perks
 
 data Element
   = Neutral
@@ -76,6 +76,7 @@ data Perk
   | FleetFooted
   
   -- Technique
+  | Berserker
   | Cunning
   | Savagery
   | Acidic

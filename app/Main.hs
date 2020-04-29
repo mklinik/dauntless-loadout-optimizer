@@ -96,12 +96,14 @@ has :: Slot -> Perk -> (Slots, Perks) -> Maybe (Slots, Perks)
 has slot perk (slots, perks)
   | num perk perks > 0 = Just (slots, dec perk perks)
   | num slot slots > 0 = Just (dec slot slots, perks)
+  | num Prismatic slots > 0 = Just (dec Prismatic slots, perks)
   | otherwise = Nothing
 
 -- Require the given slot
 hasSlot :: Slot -> (Slots, Perks) -> Maybe (Slots, Perks)
 hasSlot slot (slots, perks)
   | num slot slots > 0 = Just (dec slot slots, perks)
+  | num Prismatic slots > 0 = Just (dec Prismatic slots, perks)
   | otherwise = Nothing
 
 -- hasPerk :: Slot -> Perk -> (Slots, Perks) -> Maybe (Slots, Perks)
