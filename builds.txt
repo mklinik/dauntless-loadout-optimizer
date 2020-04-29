@@ -595,6 +595,7 @@ XXX TODO list
 
 XXX Strikers
 
+
 >>= has Defensive Iceborne
 >>= has Defensive Iceborne
 >>= has Defensive Tough
@@ -605,20 +606,55 @@ XXX Strikers
 >>= has Technique Berserker
 >>= has Technique EvasiveFury
 >>= has Power Discipline
->>= has Utility Medic
->>= has Utility Medic
+>>= hasSlot Utility
+>>= hasSlot Utility
 
-Ember Fists [EvasiveFury]
-Sight of Stone [Tough]
-Shocking Heart [Medic]
-Boreal Might [Rage]
-Gnasher Treads [Tough]
-Any Lantern []
-blz:-1 fro:1
+Legendary Ember Fists [pri,pri] [EvasiveFury]
+Sight of Stone [def] [Tough]
+Boreal Resolve [def] [Rage]
+Volcanic Grips [utl] [Rage]
+Gnasher Treads [pow] [Tough]
+Any Lantern [utl] []
+sho:-1 ter:1
 has:
-pow:2 mob:1 def:2 utl:1 tec:1
-Tough:2 EvasiveFury:1 Medic:1 Rage:1
+pow:1 def:2 utl:2 pri:2
+Tough:2 EvasiveFury:1 Rage:2
 after required:
+
+- Two free utl slots, allows +6 Medic or +6 Conduit or AethericAttunement
+- Has pow Discipline and tec Berserker
+- pri slots are used for mob Conditioning and tec Berserker
+
+
+Fireproof version
+
+>>= has Defensive Iceborne
+>>= has Defensive Iceborne
+>>= has Defensive Tough
+>>= has Defensive Tough
+>>= has Power Rage
+>>= has Power Rage
+>>= has Mobility Conditioning
+>>= has Technique Berserker
+>>= has Power Ragehunter
+>>= has Defensive Fireproof
+>>= has Defensive Fireproof
+
+Brawlers of Boreus [pow,def] [Conditioning]
+Volcanic Helm [def] [Fireproof]
+Gnasher Cloak [def] [Tough]
+Fiery Gauntlets [tec] [Fireproof]
+Volcanic Treads [pow] [Rage]
+Any Lantern [utl] []
+blz:3 fro:-3
+has:
+pow:2 def:3 utl:1 tec:1
+Fireproof:2 Tough:1 Conditioning:1 Rage:1
+after required:
+utl:1
+
+- trades Discipline and Medic for two Fireproof
+
 
 
 

@@ -14,6 +14,8 @@ allLoadouts =
       -- [h | h@(Equipment name _ _ _ _) <- chainBlades, "Thundering Cutters" `isInfixOf` name]
       -- [h | h@(Equipment name _ _ _ _) <- hammers, "Boreus" `isInfixOf` name]
       -- [w | w@(Equipment name _ _ _ _) <- pikes, "Godhand" `isInfixOf` name]
+      -- [w | w@(Equipment name _ _ _ _) <- strikers, "Legendary" `isInfixOf` name]
+      -- [w | w@(Equipment name _ _ _ _) <- strikers, "Boreus" `isInfixOf` name]
       -- hammers
       -- chainBlades
       -- pikes
@@ -31,13 +33,13 @@ main = do
   let
     foundLoadouts =
       -- sortOn (\(_,_,advantage,_,_) ->   (num advantage Blaze)) $
-      -- sortOn (\(_,rests,_,_,_) ->     - (num rests Blaze))     $
+      sortOn (\(_,resist,_,_,_,_) ->     - (num Blaze resist))     $
 
       -- sortOn (\(_,_,_,_,perks,_) -> - (num Fireproof perks)) $
       -- sortOn (\(_,_,_,_,perks) -> - (num perks Conditioning)) $
 
       -- optimize for neutral
-      -- sortOn (\(_,rests,_,_,_) ->     (absSum rests))     $
+      -- sortOn (\(_,rests,_,_,_,_) ->     (absSum rests))     $
       -- sortOn (\(_,_,advantage,_,_,_) -> (absSum advantage)) $
 
       -- sortOn (\(_,_,_,_,_,Just(remainingSlots,_)) -> - (num Technique remainingSlots)) $
@@ -58,10 +60,10 @@ main = do
                 >>= has Power Rage
                 >>= has Mobility Conditioning
                 >>= has Technique Berserker
-                >>= has Technique EvasiveFury
-                >>= has Power Discipline
-                >>= hasSlot Utility
-                >>= hasSlot Utility
+                >>= has Power Ragehunter
+                >>= has Defensive Fireproof
+                >>= has Defensive Fireproof
+                -- >>= hasSlot Utility
                 -- >>= hasSlot Defensive
       , maybe False (const True) remaining
       -- , absSum advantage == 0
@@ -76,7 +78,8 @@ main = do
       -- , num Shock resist >= -2
       -- , num Umbral resist >= -2
       -- , num Radiant resist >= -2
-      , num Blaze advantage >= 1
+      -- , num Blaze advantage >= 1
+      , num Frost advantage >= 1
       ]
 
   -- print $ length allLoadouts
